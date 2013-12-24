@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Introduction to Server-side Technologies - Akber Choudhry</title>
+  <meta name="author" content="Akber Choudhry">
+
+  
+  <meta name="description" content="Server-side scripting refers to the dynamic generation of Web pages served up by the Web server, as opposed to &ldquo;static&rdquo; web pages in the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.akber.com/overview-of-server-side-technologies">
+  <link href="/assets/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Akber Choudhry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-387617-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Akber Choudhry</a></h1>
+  
+    <h2>Technology</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.akber.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Introduction to Server-side Technologies</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-05T00:10:00+01:00" pubdate data-updated="true">Oct 5<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Server-side scripting refers to the dynamic generation of Web pages served up by the Web server, as opposed to &ldquo;static&rdquo; web pages in the server storage that are served up to the Web browser.  In other words, some part of the content sent in response to a HTTP request is determined on-the-fly by a program that executes on the server after the HTTP request has been received and generates content as a result of the execution.</p>
+
+<!-- more -->
+
+
+<h2>Detailed purpose and major uses of server-side scripting</h2>
+
+<ol>
+<li>Insertion of continuously changing content into a web page, for example &ndash; weather or stock quotes.  Also, any arbitrary logic can be used to determine certain content will be shown or not.  This purpose and (10) below are the primary purposes of server-side scripting.</li>
+<li>Authentication, authorization and session tracking &ndash; although rudimentary authentication and authorization is supported by most Web servers, anything more than the &ldquo;BASIC&rdquo; http authentication and ACLs (access control lists) over static resources requires server-side programs.  Similarly, handling cookies and keeping information about the session and/or the user is best handled by server-side scripting.</li>
+<li>Template-driven page generation.  Including repeated content like header/footers and navigation menus around the &ldquo;content area&rdquo; of a web page.</li>
+<li>Personalization and customization of content based on authentication and authorization defined above in (2).  This also includes the serving of content based on the content of the page (e.g. ads) or the browsing behavior of the user.</li>
+<li>Dynamic image generation, e.g. page counters, human-readable characters for security, maps, overlays etc.</li>
+<li>Dynamic generation of CSS and Javascript.</li>
+<li>Generating and reading HTTP headers.  Although web servers provide rudimentary abilities, server-side scripting can best generate cache control and other complex headers.</li>
+<li>Handling POST form input &ndash; accepting the input of a form and writing it to storage (file system, database, session etc.).  This also includes business transaction commitment control (ALL or NONE)  and input error handling.</li>
+<li>Device mapping &ndash; generating different types of content (HTML, XML, WML) based on the user agent that sent the HTTP request.</li>
+<li>Retrieval of data in response to query string parameters and insertion into a web page.  This is perhaps the most common purpose of utilizing scripting in generating content as part of a GET request.  e.g. sports statistics, staff list, downloadable files list etc.  The data can be retrieved from a database, file system or other forms of storage.</li>
+<li>Communication with other programs, libraries and APIs &ndash; e.g. sending out e-mail, handling message queues, LDAP etc.</li>
+<li>Re-use of persistent business objects.  HTTP is stateless, but the setup and tear-down of business objects has a very high overhead in terms of time and server resources. Server-side scripting allows us to interact with such re-usable business objects e.g. application servers, EJBs, .NET services and Web services.</li>
+</ol>
+
+
+<h2>Popular server-side scripting languages &ndash; and examples</h2>
+
+<p>Before we look at popular server-side scripting languages, we will divide them into three groups based on how the scripting programs:
+1. Older, standards-based scripting languages &ndash; these include SSI (server-side includes) and CGI (common gateway interface) and were defined in the original NCSA standards for web servers.
+2. In-process scripting languages like PHP, ASP and Perl (sometimes).
+3. Out-of-process scripting languages like JSP and servlets (Java) and XSLT.</p>
+
+<p>Another classification is based on whether it is page-centric or script-centric.  A page-centric language is an HTML page with embedded special tags (SSI and all the *SP languages) while script-centric are Perl and servlets.  Scripts in script-centric languages can produced multiple &ldquo;pages&rdquo; and have to output the entire HTML using program functions. </p>
+
+<p>Page-centric scripts are embedded into an HTML page only where dynamic content is required; but they can also be used to generate the entire content, e.g. images, XML, headers etc.  These usually run in-process and use the filesystem namespace of the web server.</p>
+
+<h3>SSI (Server Side Includes)</h3>
+
+<p><a href="#references">1</a>: These are extended comment tags inserted into a static HTML page to include other pages (templates), variables, and also execute external programs and include them in the input.  Any static HTML file defined with a special extension (commonly “.shtml”) forces a properly configured Web server to parse the file before sending and replace the special tags with the appropriate content.  This is perhaps the simplest model of server-side scripting but surprisingly, it is the essential mechanism of server-side scripting.</p>
+
+<div>
+  <pre><code class='html'>&lt;!--#set var=&quot;title&quot; value=&quot;A Title&quot; --&gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;!--#echo var=&quot;title&quot; --&gt;&lt;/title&gt;&lt;/head&gt;
+&lt;body
+&lt;!--#include virtual=&quot;head&quot; --&gt;
+&lt;table&gt;. . . . &lt;/table&gt;
+&lt;!--#include virtual=&quot;foot&quot; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+
+<h3>CGI (Common Gateway Interface)</h3>
+
+<p><a href="#references">2</a>: This is a mechanism that instructs a properly configured Web server to execute a specific file and send the output of the execution instead of sending it &ldquo;as-is&rdquo; to the client.  Any program (shell scripts, DOS batch files, C programs, Perl) can be executed through this mechanism.  Information about the request, the query string and any form parameters are sent as environment variables to the executed program.  Any output by the executed program is sent directly back to the browser.  It should be noted that the program is responsible for generating all headers.  The most commonly used language for CGI was Perl, due to its powerful text-handling capabilities.</p>
+
+<div>
+  <pre><code class='perl'>$q = new CGI;
+if (cgi_error()) {
+  print &quot;Content-type: text/plain\n\n&quot;;
+  print &quot;There was an error in your request!\n&quot;;
+  print &quot;Error is: &quot;, cgi_error(), &quot;\n&quot;;
+  exit(1);
+}
+
+# print HTML headers
+print $q-&gt;header, &quot;\n&quot;;
+print $q-&gt;start_html(-title =&gt; 'Your information request', -bgcolor =&gt; '#98B8D8'), &quot;\n&quot;;
+print $q-&gt;h1('Your information request'), &quot;\n&quot;;
+
+# print the HTML form
+print $q-&gt;start_form(-method =&gt; 'POST'), &quot;\n&quot;;
+print &quot;What's your name? &quot;, &quot;\n&quot;;
+print $q-&gt;textfield(-name =&gt; 'yourname',
+    -default =&gt; 'Your name here',
+    -override =&gt; $override), &quot;\n&quot;;</code></pre>
+</div>
+
+
+<h3>Perl</h3>
+
+<p><a href="#references">3</a>: This is an interpreted language characterised by its intuitive text handling, loose type-checking, associative arrays, handy loop constructs and simple file and environment handling.  It was the most popular server-side scripting language for many years and it supports a modular expansion system <a href="#references">4</a>.  A Perl script can be executed through the Perl Interpreter from the CGI interface (see above) or through a Web server extension that embeds the Perl Interpreter in the Web Server processes (in-process).  For example, see CGI above.  Its main drawback is that it pre-dates the Web and it is difficult to lay out HTML in the code.</p>
+
+<h3>PHP (Hypertext Preprocessor)</h3>
+
+<p><a href="#references">5</a>: I like to describe this as a cross between Perl, C++ and SSI.  This language was developed specifically for Web server-side scripting and its utility has made it one of the most popular server-side scripting languages.  As opposed to Perl, it is embedded into a fully laid out HTML page and gives complete control over HTTP request, response, cookie and session.  It contains more robust type-checking (if required) and can be programmed in an object-oriented way.  It is most commonly executed in-process and its biggest drawback is the lack of memory persistence of business objects.  Pages identified by certain extensions (commonly .phtml, .php, .php3) are parsed by the Web server and passed on to the PHP plugins that passes the content back to the Web server.  It follows the same directory structure as HTML static pages and images and is thus very easy to program and maintain.  It has an extensive library and API system and some third-party vendors (Zend etc.) offer accelerators for PHP that show considerable performance improvement for complex applications.</p>
+
+<div>
+  <pre><code class='php'>&lt;?php
+  $title = &quot;Sample PHP Script&quot;;
+  $greeting = &quot;Welcome to Sample PHP Script&quot;;
+?&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;&lt;?php echo($title) ?&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;&lt;?php echo($title) ?&gt;&lt;/h1&gt;
+  &lt;p&gt;&lt;?php echo($greeting) ?&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+
+<h3>ASP (Active Server Pages)</h3>
+
+<p><a href="#references">6</a>: This is the Microsoft page-centric solution.  It only runs on the IIS (Internet Information Server) although third party implementations on other platforms are available, making it less proprietary than Cold Fusion below.  Like other page-centric languages, it embeds dynamic constructs into HTML pages:</p>
+
+<div>
+  <pre><code class='html'>&lt;html&gt;
+  &lt;body&gt;
+  &lt;%
+    response.write(&quot;Hello World!&quot;)
+  %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+
+<h3>Cold Fusion</h3>
+
+<p><a href="#references">7</a>: This is a Macromedia page-centric solution.  However, instead of having ONE special tag to embed dynamic content, it defines a number of tags that are parsed by a Web server plugin in-process.  These special tags (in red below) make it very powerful and combined with Macromedia Web Authoring tools, make it the choice of many corporations.  However, it is proprietary:</p>
+
+<div>
+  <pre><code class='html'>&lt;cfquery name=&quot;customer&quot; datasource=&quot;customer&quot; username=&quot;abc&quot; password=&quot;123&quot; debug=&quot;yes&quot;&gt;
+  SELECT *  FROM custmast;
+&lt;/cfquery&gt;
+&lt;cfoutput query=&quot;cust&quot;&gt;
+  &lt;tr&gt;
+    &lt;td&gt;#Customer_No#&lt;/td&gt;
+    &lt;td&gt;#name#&lt;/td&gt;
+    &lt;td&gt;#Street#&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/cfoutput&gt;
+&lt;/table&gt;</code></pre>
+</div>
+
+
+<h3>JSP/Servlets</h3>
+
+<p><a href="#references">8</a>: This is standards-based, popular, hybrid and out-of-process &mdash; based on Java and J2EE standards<a href="#references">9</a> .  Although JSPs are page-centric at author-time, they are not parsed by a web server-plugin.  They are compiled into servlets and deployed in a separate Web Container.  The Web server communicates with the web container using sockets.  Most web containers implement a simple web server built into them which are usually not as robust and scalable as the leading Web servers but are good for testing and debugging.</p>
+
+<p>Servlets are script-centric and are regular Java programs.  The compilation of JSPs into servlets gives us the best of both worlds (author-time page-centric and compiled out-of-process) and both of these have access to the full suite of Java libraries and APIs.  The web container also defines sophisticated authorisation, authentication and URL mapping techniques that make this an enterprise-level Web development platform.  Due to its being out of process, session objects and business objects can be cached and re-used by multiple HTTP requests.</p>
+
+<p>Here is an example of the same code in servlet mode and JSP mode:
+Servlet:</p>
+
+<div>
+  <pre><code class='java'>public void doGet (HttpServletRequest req, HttpServletResponse res)
+    throws ServletException, IOException {
+    String title = &quot;Hello World Servlet&quot;;
+    res.setContentType(&quot;text/html&quot;);
+    ServletOutputStream out = res.getOutputStream();
+    out.println(&quot;&lt;html&gt;&quot;);&lt;br/&gt;    out.println(&quot;&lt;head&gt;&lt;title&gt;+title+&lt;/title&gt;&lt;/head&gt;&quot;);
+    out.println(&quot;&lt;body&gt;&quot;);&lt;br/&gt;    out.println(&quot;&lt;h1&gt;+title+&lt;/h1&gt;&quot;);
+    out.println(&quot;&lt;/body&gt;&lt;/html&gt;&quot;);
+  }
+
+JSP:
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;% String title = &quot;Hello World JSP&quot;; %&gt;
+    &lt;TITLE&gt;&lt;%= title %&gt;&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+  &lt;BODY&gt;
+    &lt;H1&gt;&lt;%= title %&gt;&lt;/H1&gt;
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</code></pre>
+</div>
+
+
+<p><a name="references">&nbsp;</a></p>
+
+<h2>References</h2>
+
+<ol>
+<li><a href="http://hoohoo.ncsa.uiuc.edu/docs/tutorials/includes.html">http://hoohoo.ncsa.uiuc.edu/docs/tutorials/includes.html</a></li>
+<li><a href="http://hoohoo.ncsa.uiuc.edu/cgi/">http://hoohoo.ncsa.uiuc.edu/cgi/</a></li>
+<li><a href="http://www.perl.org/">http://www.perl.org/</a></li>
+<li><a href="http://www.cpan.org/">http://www.cpan.org/</a></li>
+<li><a href="http://www.php.net/">http://www.php.net/</a></li>
+<li><a href="http://www.asp.net/">http://www.asp.net/</a></li>
+<li><a href="http://www.macromedia.com/go/gnavtray_cfmx_home">http://www.macromedia.com/go/gnavtray_cfmx_home</a></li>
+<li><a href="http://java.sun.com/products/jsp/">http://java.sun.com/products/jsp/</a></li>
+<li><a href="http://java.sun.com/j2ee/index.jsp">http://java.sun.com/j2ee/index.jsp</a></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Akber Choudhry</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-05T00:10:00+01:00" pubdate data-updated="true">Oct 5<span>th</span>, 2004</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/architecture/'>architecture</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.akber.com/overview-of-server-side-technologies" data-via="akberc" data-counturl="http://www.akber.com/overview-of-server-side-technologies" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/shareware-typetime-1989" title="Previous Post: First Published Shareware (1989)">&laquo; First Published Shareware (1989)</a>
+      
+      
+        <a class="basic-alignment right" href="/ibm-rad-7-with-commerce-6" title="Next Post: Using IBM Rational Version 7.0 IDE">Using IBM Rational Version 7.0 IDE &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/is-ceylon-enterprise-ready">Is Ceylon Enterprise Ready?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/fluent-httpclient-for-apis">Fluent HttpClient for APIs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/bloatware-destroying-android-experience">Bloatware Destroying Android Experience</a>
+      </li>
+    
+      <li class="post">
+        <a href="/first-looks-ibm-smartcloud-enterprise">First Looks: IBM SmartCloud Enterprise</a>
+      </li>
+    
+      <li class="post">
+        <a href="/software-testing">Software Testing</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/akberc">@akberc</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'akberc',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+AkberChoudhry?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Akber Choudhry -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

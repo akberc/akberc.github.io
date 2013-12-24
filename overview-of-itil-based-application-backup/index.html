@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Overview of ITIL-based Application Backup and Recovery - Akber Choudhry</title>
+  <meta name="author" content="Akber Choudhry">
+
+  
+  <meta name="description" content="Derived from a subset of IT Service Continuity Management (ITIL v3 ITSCM): ITIL v3 ITSCM considers application backup and recovery as one of the risk &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.akber.com/overview-of-itil-based-application-backup">
+  <link href="/assets/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Akber Choudhry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-387617-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Akber Choudhry</a></h1>
+  
+    <h2>Technology</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.akber.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Overview of ITIL-based Application Backup and Recovery</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-25T14:11:36+01:00" pubdate data-updated="true">Mar 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><em>Derived from a subset of IT Service Continuity Management (ITIL v3 ITSCM):</em> ITIL v3 ITSCM considers application backup and recovery as one of the risk mitigating factors in assuring service continuity. This is a brief discussion of commonly understood IT application backup and recovery methods within the ITIL v3 ITSCM framework.</p>
+
+<!-- more -->
+
+
+<p>In ITIL v3, ITSCM (IT Service Continuity Management) is defined as:</p>
+
+<blockquote><p><em>‘The goal of ITSCM is to support the overall Business Continuity Management process by ensuring that the required IT technical and service facilities (including computer systems, networks, applications, data repositories, telecommunications, environment, technical support and Service Desk) can be resumed within required, and agreed, business timescales.’ (ITIL v3 ITSCM 4.5.1)</em></p></blockquote>
+
+<p>Within each of the four stages of ITSCM, backup and recovery planning and the testing and invocation of its procedures, is mapped as follows:</p>
+
+<h2>Stage 1 &ndash; Initiation</h2>
+
+<blockquote><p><em>Resource allocation: Depending on the maturity of the organization, with respect to ITSCM, there may be a requirement to familiarize and/or train staff to accomplish the Stage 2 tasks. Alternatively, the use of experienced external consultants may assist in completing the analysis more quickly. However, it is important that the organization can then maintain the process going forward without the need to rely totally on external support. (ITIL v3 ITSCM 4.5.5.1)</em></p></blockquote>
+
+<p>In other words, the ultimate ownership of the backup and recovery strategy and processes lies with the organization itself.</p>
+
+<h2>Stage 2 &ndash; Requirements and Strategy</h2>
+
+<p>Once the Business impact Analysis and Risk Analysis has been done, backup and recovery of applications and data is usually one of many Risk Response Measures.</p>
+
+<blockquote><p><em>A comprehensive backup and recovery strategy, including off-site storage. (ITIL v3 ITSCM 4.5.5.2)</em></p></blockquote>
+
+<p>The recovery procedures are defined first, and then backup procedures and their frequency are based on the needs of the recovery procedures.</p>
+
+<p>Common recovery options include:
+1. <strong>Cold Standby</strong> (Gradual Recovery): Servers need to be reconfigured and applications deployed, and this can take days or weeks.
+2. <strong>Warm Standby</strong> (Intermediate Recovery): From minutes to a few hours, this option requires servers and applications already configured and deployed, that need to be connected to the production infrastructure (using network or other techniques. By engaging a third party to host alternate hardware, this technique can also be used for disaster recovery.
+3. <strong>Hot Standby</strong> (Immediate or Fast Recovery): This option requires redundant hardware and applications that may or may not be at the same physical location, which automatically take over, without minimal interruption to IT services.</p>
+
+<h2>Stage 3 &ndash; Implementation</h2>
+
+<p>In this stage, backup and recovery processes are implemented using one or more of the following types of tests:
+1. Theoretical Testing: Concerned individuals meet to assess the effectiveness of the backup and recovery procedures
+2. Announced and unannounced full testing: this is a full dress rehearsal.
+3. Partial testing and event-based testing: this is a subset of full testing.</p>
+
+<h2>Stage 4 &ndash; Ongoing Operations</h2>
+
+<blockquote><p><strong>Testing</strong> – <em>following the initial testing, it is necessary to establish a programme of regular testing to ensure that the critical components of the strategy are tested, preferably at least annually, although testing of IT Service Continuity Plans should be arranged in line with business needs  &hellip;  All plans should also be tested after every major business change. (ITIL v3 ITSCM 4.5.5.4)</em></p></blockquote>
+
+<p>Recovery Invocation
+When disaster strikes, the organization needs to put the recovery plans into action:
+* Retrieval of backup tapes, data documentation, procedures, software images etc. from on-site or off-site locations
+* Mobilization of the appropriate technical personnel to commence the recovery of required systems, servers, applications and services
+* Contacting and putting on alert customers, partners, service providers, application vendors, etc. who may be required to undertake actions or provide assistance in the recovery process</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Akber Choudhry</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-25T14:11:36+01:00" pubdate data-updated="true">Mar 25<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/architecture/'>architecture</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.akber.com/overview-of-itil-based-application-backup" data-via="akberc" data-counturl="http://www.akber.com/overview-of-itil-based-application-backup" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/ubuntu-as-a-first-choice-desktop-os" title="Previous Post: Ubuntu as a First-Choice Desktop OS">&laquo; Ubuntu as a First-Choice Desktop OS</a>
+      
+      
+        <a class="basic-alignment right" href="/program-management" title="Next Post: Program Management">Program Management &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/is-ceylon-enterprise-ready">Is Ceylon Enterprise Ready?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/fluent-httpclient-for-apis">Fluent HttpClient for APIs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/bloatware-destroying-android-experience">Bloatware Destroying Android Experience</a>
+      </li>
+    
+      <li class="post">
+        <a href="/first-looks-ibm-smartcloud-enterprise">First Looks: IBM SmartCloud Enterprise</a>
+      </li>
+    
+      <li class="post">
+        <a href="/software-testing">Software Testing</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/akberc">@akberc</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'akberc',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+AkberChoudhry?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Akber Choudhry -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

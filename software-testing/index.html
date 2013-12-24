@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Software Testing - Akber Choudhry</title>
+  <meta name="author" content="Akber Choudhry">
+
+  
+  <meta name="description" content="Algorithmic Complexity and the Theoretical Limits of Testing: According to the undecidability theorem, most software quality properties are not &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.akber.com/software-testing">
+  <link href="/assets/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Akber Choudhry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-387617-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Akber Choudhry</a></h1>
+  
+    <h2>Technology</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.akber.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Software Testing</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-26T00:11:17+01:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>Algorithmic Complexity and the Theoretical Limits of Testing:</strong> According to the undecidability theorem, most software quality properties are not provable. Therefore, what kind of testing techniques do we use to achieve software quality?  While it is theoretically impossible to deterministically test a system for flawless quality, it is possible &mdash; through good design, communications and dynamic testing &mdash; to prevent and detect defects, and to verify and validate the system against pre-defined expectations.</p>
+
+<!-- more -->
+
+
+<h2>Undecidability Theorem</h2>
+
+<p>The undecidability or incompleteness theorem is a statement of complexity of systems (a group of logical statements when taken together) first formulated by Godel <a href="#references">1</a> &mdash; and is the precursor to Turing&rsquo;s halting theorem about Turing machines &mdash; which in turn is the precursor of modern program-based computer systems. Without going into details, a good summary that serves the current purposes is: <em>any piece of code that&rsquo;s complex enough to be interesting will always surprise its programmers</em> <a href="#references">2</a>.</p>
+
+<p>This concept is generally known as <strong>algorithmic complexity</strong> (AC). In Claim 4 , Lewis successfully uses these theorems to prove that </p>
+
+<blockquote><p><em>There is no estimator which produces a correct fixed bound on the complexity of all inputs.&ldquo;</em>  <a href="#references">3</a>.
+The impications of algorithmic complexity do not apply only to software programs, but extend to other areas such as encryption algorithms, computer security, etc.</p></blockquote>
+
+<h2>Testing techniques: origins and types</h2>
+
+<p>So, how do we test software for quality if we assume that we have proven that software can never be completely tested? By &mdash; <strong>prevention, detection, verification</strong> and <strong>validation</strong>. These concepts are fairly generic and subjective, and to make them as objective as possible, a numbe of techniques have been specified by scientists and have evolved in business software development.</p>
+
+<p>In the recent past, these techniques have been refined and assumed greater importance with the advent of distributed software that relies on multiple systems working correctly and as expected in order to fulfil the business goals. In other words, the &ldquo;contractual&rdquo; reliability of the interfaces between disparate software systems has resulted in these techniques coming to the forefront of software development as part of a continuous quality assurance process <a href="#references">4</a>.</p>
+
+<p>Here are the three main groups of these techiques and most of them involve steps <strong>before, during</strong> and <strong>after</strong> the development of software (the foundation of TQM). Both groups involve <strong>static</strong> (without execution) and <strong>dynamic</strong> (execution) testing of programs.</p>
+
+<h3>1. Functional Testing (black-box)</h3>
+
+<p>The developed software system is seen as a black box which is expected to satisfy a set of business requirements. Those requirements are provided to developers as specifications, and once the programs have been partially or completely developed, they are tested against these functional specifications. This testing is sometimes <strong>manual</strong> &mdash; as in user clicking on a GUI and producing results or sophisticated programs can be used to design and quantify the functional tests, and then to measure the software against them.</p>
+
+<p>Functional test generation and execution tools are a fairly recent addition <a href="#references">5</a>. Commonly employed techniques are:
+* Acceptance testing: dynamic: where the software testing is tested against user specifications so that the user community &ldquo;accepts&rdquo; it.
+* Regression tests: dynamic: when changes in a prior version of the software are tested to make sure that they have not compromised existing functionality.
+* Integration testing: dynamic: when separately developed components are testing when they are executing in concert with each other.
+* End-to-end testing or transaction testing: a business transaction is tested from beginning to end.
+* Inspections: static :when the software is tested for completeness and interaction and functional assumptions are validated by a dialogue between the user community and the development team, usually with a meeting that involves a design of the system.</p>
+
+<h3>2. Structural Testing (white-box)</h3>
+
+<p>These tests delve inside the code of the system and test the logic of individual pieces. It may be necessary to organize the code in a way to make structural testing possible. Almost all of these techniques are <strong>automatic</strong>, using a variety of tools. These tests are NOT exhaustive, i.e. if they were to check for all valid inputs, the number of tests would be astronomical. In real-life, experienced programmers check for bounds, limits, nulls, zeros and other such inputs into &ldquo;units&rdquo; of code. Commonly employed techniques include:
+* Unit testing: dynamic: programmatically tests portions of the code against a set of conditions specified by the programmer that developed the software or another programmer. This is further augmented by <em>unit test coverage testing</em> &mdash; testing that tests the extent of the code that is &ldquo;covered&rdquo; by unit testing!
+* Code walk-throughs: static : the programmer walks through the logic and branching of the code by him/herself or with the development team &ndash; looking for obvious flaws that are detectable by a &lsquo;second pair of eyes&rsquo;. It is also helpful for junior programmers to learn best practices in coding.
+* Branch-condition testing: dynamic : using tools and pre-compilers, the execution of code is tested in conjunction with unit testing (see above) to determine if all the branch conditions in the code have been &ldquo;covered&rdquo;.
+* Thread testing: static dynamic: this tests the code for concurrent or &ldquo;race conditions&rdquo;. Such tests are notoriously hard to design due to the unpredictability of such conditions and good design is always a must, and as such, I classify them as &lsquo;static&rsquo; also.</p>
+
+<h3>3. Operational Testing</h3>
+
+<p>These types of testing test the software under operational conditions. Examples include:
+* Stress testing: dynamic : testing the software under operational loads that exceed the maximum expected loads on the system.
+* Security breach testing: static and dynamic: testing the software under a combination of real-world security risks.</p>
+
+<h3>Combination of Techniques (gray-box), and Risk Analysis</h3>
+
+<p>A good testing regimen is a combination of functional and structural testing as well as operational testing. This has been referred to as &ldquo;gray-box&rdquo;! However, the choice of the exact techniques to use depends on an experienced <strong>risk analysis</strong> of the business impact of software defects in terms of financial loss and prestige loss (sometimes it is the same thing). For example &ndash; what is the business impact of a bank account statement being sent to the wrong person? What is the impact of a delayed product shipment? etc.</p>
+
+<p><a name="references">&nbsp;</a></p>
+
+<h2>References</h2>
+
+<ol>
+<li><a href="http://users.ox.ac.uk/~jrlucas/Godel/mmg.html">R. Lucas: Minds, Machines, and Gödel. Philosophy XXXVI (1961):112-127, retrieved on 18 September, 2005.</a></li>
+<li><a href="http://www.awprofessional.com/articles/article.asp?p=101654">Mitchell Waldrop, Complexity: The Emerging Science at the Edge of Order and Chaos, Simon and Schuster, 1992, 282. , retrieved on 18 September, 2005.</a></li>
+<li>JP Lewis, Limits to Software Estimation, ACM SIGSOFT, Volume 26 Issue 4 July 2001, p. 58.</li>
+<li>W Lewis, Software Testing and Continuous Quality and Improvement, 2nd Edition, pp. 29-39.</li>
+<li><a href="http://www-306.ibm.com/software/awdtools/tester/functional/index.html">Functional Testing: http://www-306.ibm.com/software/awdtools/tester/functional/index.html</a></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Akber Choudhry</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-26T00:11:17+01:00" pubdate data-updated="true">Mar 26<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/development/'>development</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.akber.com/software-testing" data-via="akberc" data-counturl="http://www.akber.com/software-testing" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/program-management" title="Previous Post: Program Management">&laquo; Program Management</a>
+      
+      
+        <a class="basic-alignment right" href="/first-looks-ibm-smartcloud-enterprise" title="Next Post: First looks: IBM SmartCloud Enterprise">First looks: IBM SmartCloud Enterprise &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/is-ceylon-enterprise-ready">Is Ceylon Enterprise Ready?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/fluent-httpclient-for-apis">Fluent HttpClient for APIs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/bloatware-destroying-android-experience">Bloatware Destroying Android Experience</a>
+      </li>
+    
+      <li class="post">
+        <a href="/first-looks-ibm-smartcloud-enterprise">First Looks: IBM SmartCloud Enterprise</a>
+      </li>
+    
+      <li class="post">
+        <a href="/software-testing">Software Testing</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/akberc">@akberc</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'akberc',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+AkberChoudhry?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Akber Choudhry -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

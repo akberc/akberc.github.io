@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Eclipse and OSGi - P2 Is Broken in Ganymede - Akber Choudhry</title>
+  <meta name="author" content="Akber Choudhry">
+
+  
+  <meta name="description" content="UPDATE: Most of these issues are fixed in Ganymede SR2, and I am using the OSGi update mechanism now. Eclipse is a great tool with its main strength &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.akber.com/eclipse-and-osgi-equinox-p2">
+  <link href="/assets/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Akber Choudhry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-387617-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Akber Choudhry</a></h1>
+  
+    <h2>Technology</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.akber.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Eclipse and OSGi - P2 Is Broken in Ganymede</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-23T00:10:00+01:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>UPDATE:</strong> Most of these issues are fixed in Ganymede SR2, and I am using the OSGi update mechanism now.</p>
+
+<!-- more -->
+
+
+<p><a href="http://www.eclipse.org/">Eclipse</a> is a great tool with its main strength being its modular architecture.  Everything is a module, and modules can bee updated from within Eclipse.  This architecture propelled Eclipse into the leading IDE for Java and J2EE developers, as well as for other languages and platforms.  Vendors who have taken advantage of this architecture to base their IDEs on Eclipse are the who&rsquo;s who of the software world.</p>
+
+<p>Soon enough, with versions and sub-projects, updates became a hassle. So, we ended up with the &lsquo;train release&rsquo; concept from Eclipse &ndash; Europa and then Ganymede &ndash; a release of various plug-ins and modules that have been tested together. With the excellent experience of Europa behind me, I replaced it with Ganymede &ndash; so high were the expectations that I did not keep a backup.</p>
+
+<p>Along comes the popularity of <a href="http://www.osgi.org/">OSGI</a> as a universal software component architecture.  Eclipse could only have become better with it, but unfortunately, it was released while it was still not user-friendly and did not enhance productivity.  I was spending a lot of time reconciling updates, and many times, P2 (as the Eclipse OSGi toolset is called) just wouldn&rsquo;t leave me with a way out.  With a DSL Internet connection, it would take hours or just hang while resolving dependencies, downloading dependency files from every plugin site.  In short, it was a nightmare, and to top it off, it did not run in the background.</p>
+
+<p>Looking around, it was apparent that the old plugin manager &ndash; &lsquo;Classic Update&rsquo; &ndash; was still available in all Ganymede versions but that it could only be activated through the Preferences menu in the SDK version.</p>
+
+<p>And then I found the way to remove p2.  It is official &ndash; right from Eclipse web sites &ndash; and it works: <a href="http://wiki.eclipse.org/Equinox_p2_Removal">http://wiki.eclipse.org/Equinox_p2_Removal</a></p>
+
+<p>There is also an <a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=110125">automated script</a> available, but I was not brave enough to run it, although I used the <code>config.ini</code> and <code>eclipse.ini</code> files included in it.  Also, I moved the directories and files to another folder instead of deleting them.  This way I had an easy way out in case this did not work.  But it worked very well, and I had a reliable speedy Eclipse back.  However, I have an invalid configuration which means the vaunted p2 did not do its job properly while it was in charge.</p>
+
+<p>We&rsquo;ll have to wait for a more stable version of OSGi in Eclipse.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Akber Choudhry</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-23T00:10:00+01:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/development/'>development</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.akber.com/eclipse-and-osgi-equinox-p2" data-via="akberc" data-counturl="http://www.akber.com/eclipse-and-osgi-equinox-p2" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/human-knowledge-to-knowledge-systems" title="Previous Post: Human Knowledge to Knowledge Systems">&laquo; Human Knowledge to Knowledge Systems</a>
+      
+      
+        <a class="basic-alignment right" href="/streaming-stored-audio" title="Next Post: Streaming Stored Audio">Streaming Stored Audio &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/is-ceylon-enterprise-ready">Is Ceylon Enterprise Ready?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/fluent-httpclient-for-apis">Fluent HttpClient for APIs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/bloatware-destroying-android-experience">Bloatware Destroying Android Experience</a>
+      </li>
+    
+      <li class="post">
+        <a href="/first-looks-ibm-smartcloud-enterprise">First Looks: IBM SmartCloud Enterprise</a>
+      </li>
+    
+      <li class="post">
+        <a href="/software-testing">Software Testing</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/akberc">@akberc</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'akberc',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+AkberChoudhry?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Akber Choudhry -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

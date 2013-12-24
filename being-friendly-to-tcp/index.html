@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Being Friendly to TCP - Akber Choudhry</title>
+  <meta name="author" content="Akber Choudhry">
+
+  
+  <meta name="description" content="UDP traffic should not affect TCP connections when there is a contention for bandwidth. What is TCP-Friendliness? UDP and other continuous streaming &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.akber.com/being-friendly-to-tcp">
+  <link href="/assets/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Akber Choudhry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-387617-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Akber Choudhry</a></h1>
+  
+    <h2>Technology</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.akber.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Being Friendly to TCP</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-04T16:10:00+01:00" pubdate data-updated="true">Oct 4<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>UDP traffic should not affect TCP connections when there is a contention for bandwidth.</p>
+
+<!-- more -->
+
+
+<h3>What is TCP-Friendliness?</h3>
+
+<p>UDP and other continuous streaming transports are becoming more common on the Internet as multimedia, telephony and P2P applications start to use larger and larger portions of available bandwidth.</p>
+
+<p>One of the better definitions of TCP-friendliness is as follows: &ldquo;a flow is TCP-friendly if other TCP connections sharing the same bottleneck link as it do not receive less bandwidth in the long term than they would receive if the flow in concern is also a TCP connection possibly with a short Round Trip Time(RTT).&rdquo; <a href="#footnotes">1</a></p>
+
+<p>TCP is well-behaved in terms of transfer reliability and has built-in congestion control <a href="#footnotes">2</a>. Non-TCP flows are commonly used when such niceties are not required and a simpler data push/pull serves the job. However, as such flows take up more and more of the bandwidth, TCP connections start to lose out. The goal of TCP-friendliness is to allow non-TCP data flows to consume as much bandwidth as a TCP connection would and not much more, thus implementing a &ldquo;fair&rdquo; regime of resource-sharing. Since non-TCP transport protocols are usually less sophisticated and more varied, it would not be practical to prescribe congestion control WITHIN those protocols. It is much more feasible to prescribe such actions at the IP routing level.</p>
+
+<p>Active Queue Management is just one of the techniques used to accomplish this within TCP-friendly routers. Such routers actively monitor traffic and exchange information and throttle certain types of traffic to achieve TCP-friendliness. <a href="#footnotes">3</a></p>
+
+<p>This is an active area of research and proposed solutions still lag behind requirements. Sally Ford <a href="#footnotes">2</a> is a prominent researcher in this area and some of her research papers can be found <a href="http://www.icir.org/tfrc/">here</a>.</p>
+
+<p><a name="footnotes">&nbsp;</a></p>
+
+<h3>References</h3>
+
+<p>[1] http://cairo.cs.uiuc.edu/~binyu/writing/binyu-497-report.pdf</p>
+
+
+<p>[2] Kurose and Ross, Computer Networking, Third Edition, p.298</p>
+
+
+<p>[3] http://www.cs.wpi.edu/~claypool/papers/queue-law/</p>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Akber Choudhry</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-04T16:10:00+01:00" pubdate data-updated="true">Oct 4<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/architecture/'>architecture</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.akber.com/being-friendly-to-tcp" data-via="akberc" data-counturl="http://www.akber.com/being-friendly-to-tcp" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/choice-for-apps-tcp-or-udp" title="Previous Post: Choice for Apps - TCP or UDP">&laquo; Choice for Apps - TCP or UDP</a>
+      
+      
+        <a class="basic-alignment right" href="/human-knowledge-to-knowledge-systems" title="Next Post: Human Knowledge to Knowledge Systems">Human Knowledge to Knowledge Systems &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/is-ceylon-enterprise-ready">Is Ceylon Enterprise Ready?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/fluent-httpclient-for-apis">Fluent HttpClient for APIs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/bloatware-destroying-android-experience">Bloatware Destroying Android Experience</a>
+      </li>
+    
+      <li class="post">
+        <a href="/first-looks-ibm-smartcloud-enterprise">First Looks: IBM SmartCloud Enterprise</a>
+      </li>
+    
+      <li class="post">
+        <a href="/software-testing">Software Testing</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/akberc">@akberc</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'akberc',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+AkberChoudhry?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Akber Choudhry -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

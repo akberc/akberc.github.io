@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Desktop | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/desktop/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu as a First-Choice Desktop OS]]></title>
+    <link href="http://www.akber.com/ubuntu-as-a-first-choice-desktop-os"/>
+    <updated>2012-01-29T17:55:00+00:00</updated>
+    <id>http://www.akber.com/ubuntu-as-a-first-choice-desktop-os</id>
+    <content type="html"><![CDATA[<p>Working with Linux desktops for about 15 years now, I am always preparing for workarounds and compromises when using Linux for day-to-day desktop work.</p>
+
+<!-- more -->
+
+
+<p>Our new Canon MP-series printer/scanner/copier was to be used for scanning and colour printing.  We would plug it into the Ubuntu desktop for printing and we thought that the scanning would only work on a Windows machine.  Just before our admin was about to put in the manufacturer&rsquo;s CD into a Windows laptop for the occasional scanning, I  plugged in the USB cable into the Ubuntu 11.10 desktop and was delighted to find out that the printer was automatically detected and configured.  Feeling brave, I typed &lsquo;scan&rsquo; into the Ubuntu Unity menu and up came an app that appeared to be rather spartan.  I felt brave and clicked &lsquo;scan&rsquo;.</p>
+
+<p>It scanned and allowed me to crop the image.  I scanned another sheet, cropped it different dimensions, and then saved to PDF, half-expecting it to create two documents.  Both sheets came out as two pages of a very fine PDF file.  Amazing, without installing any software and having to use manufacturer-supplied bloatware.</p>
+
+<p>Now, if only Ubuntu would establish an MTP connection with my Android.</p>
+
+<p>Maybe Ubuntu's <a href="https://bugs.launchpad.net/ubuntu/+bug/1">Bug #1</a> will finally get resolved.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OOO - Happy 10th Birthday]]></title>
+    <link href="http://www.akber.com/ooo-happy-10th-birthday"/>
+    <updated>2010-10-15T13:18:00+01:00</updated>
+    <id>http://www.akber.com/ooo-happy-10th-birthday</id>
+    <content type="html"><![CDATA[<p>Happy birthday to OpenOffice, also known as OpenOffice.Org and their contribution to the standardisation of the ODF standards and providing a viable alternative to an entrenched market leader.  Reminds us of the browser wars of the early 2000s.</p>
+
+<p><a href="http://wiki.services.openoffice.org/wiki/A_Brief_History_Of_OpenOffice.org">http://wiki.services.openoffice.org/wiki/A_Brief_History_Of_OpenOffice.org</a></p>
+]]></content>
+  </entry>
+  
+</feed>

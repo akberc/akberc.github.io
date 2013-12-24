@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Development | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/development/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Is Ceylon Enterprise Ready?]]></title>
+    <link href="http://www.akber.com/is-ceylon-enterprise-ready"/>
+    <updated>2013-10-04T18:30:51+01:00</updated>
+    <id>http://www.akber.com/is-ceylon-enterprise-ready</id>
+    <content type="html"><![CDATA[<p>Ceylon is an up-and-coming JVM language with some very interesting features.  I took it for a spin and experiences are posted at <a href="http://java.dzone.com/articles/ceylon-enterprise-ready">http://java.dzone.com/articles/ceylon-enterprise-ready</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Software Testing]]></title>
+    <link href="http://www.akber.com/software-testing"/>
+    <updated>2012-03-26T00:11:17+01:00</updated>
+    <id>http://www.akber.com/software-testing</id>
+    <content type="html"><![CDATA[<p><strong>Algorithmic Complexity and the Theoretical Limits of Testing:</strong> According to the undecidability theorem, most software quality properties are not provable. Therefore, what kind of testing techniques do we use to achieve software quality?  While it is theoretically impossible to deterministically test a system for flawless quality, it is possible &mdash; through good design, communications and dynamic testing &mdash; to prevent and detect defects, and to verify and validate the system against pre-defined expectations.</p>
+
+<!-- more -->
+
+
+<h2>Undecidability Theorem</h2>
+
+<p>The undecidability or incompleteness theorem is a statement of complexity of systems (a group of logical statements when taken together) first formulated by Godel <a href="#references">1</a> &mdash; and is the precursor to Turing&rsquo;s halting theorem about Turing machines &mdash; which in turn is the precursor of modern program-based computer systems. Without going into details, a good summary that serves the current purposes is: <em>any piece of code that&rsquo;s complex enough to be interesting will always surprise its programmers</em> <a href="#references">2</a>.</p>
+
+<p>This concept is generally known as <strong>algorithmic complexity</strong> (AC). In Claim 4 , Lewis successfully uses these theorems to prove that </p>
+
+<blockquote><p><em>There is no estimator which produces a correct fixed bound on the complexity of all inputs.&ldquo;</em>  <a href="#references">3</a>.
+The impications of algorithmic complexity do not apply only to software programs, but extend to other areas such as encryption algorithms, computer security, etc.</p></blockquote>
+
+<h2>Testing techniques: origins and types</h2>
+
+<p>So, how do we test software for quality if we assume that we have proven that software can never be completely tested? By &mdash; <strong>prevention, detection, verification</strong> and <strong>validation</strong>. These concepts are fairly generic and subjective, and to make them as objective as possible, a numbe of techniques have been specified by scientists and have evolved in business software development.</p>
+
+<p>In the recent past, these techniques have been refined and assumed greater importance with the advent of distributed software that relies on multiple systems working correctly and as expected in order to fulfil the business goals. In other words, the &ldquo;contractual&rdquo; reliability of the interfaces between disparate software systems has resulted in these techniques coming to the forefront of software development as part of a continuous quality assurance process <a href="#references">4</a>.</p>
+
+<p>Here are the three main groups of these techiques and most of them involve steps <strong>before, during</strong> and <strong>after</strong> the development of software (the foundation of TQM). Both groups involve <strong>static</strong> (without execution) and <strong>dynamic</strong> (execution) testing of programs.</p>
+
+<h3>1. Functional Testing (black-box)</h3>
+
+<p>The developed software system is seen as a black box which is expected to satisfy a set of business requirements. Those requirements are provided to developers as specifications, and once the programs have been partially or completely developed, they are tested against these functional specifications. This testing is sometimes <strong>manual</strong> &mdash; as in user clicking on a GUI and producing results or sophisticated programs can be used to design and quantify the functional tests, and then to measure the software against them.</p>
+
+<p>Functional test generation and execution tools are a fairly recent addition <a href="#references">5</a>. Commonly employed techniques are:
+* Acceptance testing: dynamic: where the software testing is tested against user specifications so that the user community &ldquo;accepts&rdquo; it.
+* Regression tests: dynamic: when changes in a prior version of the software are tested to make sure that they have not compromised existing functionality.
+* Integration testing: dynamic: when separately developed components are testing when they are executing in concert with each other.
+* End-to-end testing or transaction testing: a business transaction is tested from beginning to end.
+* Inspections: static :when the software is tested for completeness and interaction and functional assumptions are validated by a dialogue between the user community and the development team, usually with a meeting that involves a design of the system.</p>
+
+<h3>2. Structural Testing (white-box)</h3>
+
+<p>These tests delve inside the code of the system and test the logic of individual pieces. It may be necessary to organize the code in a way to make structural testing possible. Almost all of these techniques are <strong>automatic</strong>, using a variety of tools. These tests are NOT exhaustive, i.e. if they were to check for all valid inputs, the number of tests would be astronomical. In real-life, experienced programmers check for bounds, limits, nulls, zeros and other such inputs into &ldquo;units&rdquo; of code. Commonly employed techniques include:
+* Unit testing: dynamic: programmatically tests portions of the code against a set of conditions specified by the programmer that developed the software or another programmer. This is further augmented by <em>unit test coverage testing</em> &mdash; testing that tests the extent of the code that is &ldquo;covered&rdquo; by unit testing!
+* Code walk-throughs: static : the programmer walks through the logic and branching of the code by him/herself or with the development team &ndash; looking for obvious flaws that are detectable by a &lsquo;second pair of eyes&rsquo;. It is also helpful for junior programmers to learn best practices in coding.
+* Branch-condition testing: dynamic : using tools and pre-compilers, the execution of code is tested in conjunction with unit testing (see above) to determine if all the branch conditions in the code have been &ldquo;covered&rdquo;.
+* Thread testing: static dynamic: this tests the code for concurrent or &ldquo;race conditions&rdquo;. Such tests are notoriously hard to design due to the unpredictability of such conditions and good design is always a must, and as such, I classify them as &lsquo;static&rsquo; also.</p>
+
+<h3>3. Operational Testing</h3>
+
+<p>These types of testing test the software under operational conditions. Examples include:
+* Stress testing: dynamic : testing the software under operational loads that exceed the maximum expected loads on the system.
+* Security breach testing: static and dynamic: testing the software under a combination of real-world security risks.</p>
+
+<h3>Combination of Techniques (gray-box), and Risk Analysis</h3>
+
+<p>A good testing regimen is a combination of functional and structural testing as well as operational testing. This has been referred to as &ldquo;gray-box&rdquo;! However, the choice of the exact techniques to use depends on an experienced <strong>risk analysis</strong> of the business impact of software defects in terms of financial loss and prestige loss (sometimes it is the same thing). For example &ndash; what is the business impact of a bank account statement being sent to the wrong person? What is the impact of a delayed product shipment? etc.</p>
+
+<p><a name="references">&nbsp;</a></p>
+
+<h2>References</h2>
+
+<ol>
+<li><a href="http://users.ox.ac.uk/~jrlucas/Godel/mmg.html">R. Lucas: Minds, Machines, and Gödel. Philosophy XXXVI (1961):112-127, retrieved on 18 September, 2005.</a></li>
+<li><a href="http://www.awprofessional.com/articles/article.asp?p=101654">Mitchell Waldrop, Complexity: The Emerging Science at the Edge of Order and Chaos, Simon and Schuster, 1992, 282. , retrieved on 18 September, 2005.</a></li>
+<li>JP Lewis, Limits to Software Estimation, ACM SIGSOFT, Volume 26 Issue 4 July 2001, p. 58.</li>
+<li>W Lewis, Software Testing and Continuous Quality and Improvement, 2nd Edition, pp. 29-39.</li>
+<li><a href="http://www-306.ibm.com/software/awdtools/tester/functional/index.html">Functional Testing: http://www-306.ibm.com/software/awdtools/tester/functional/index.html</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Eclipse and OSGi - P2 Is Broken in Ganymede]]></title>
+    <link href="http://www.akber.com/eclipse-and-osgi-equinox-p2"/>
+    <updated>2009-04-23T00:10:00+01:00</updated>
+    <id>http://www.akber.com/eclipse-and-osgi-equinox-p2</id>
+    <content type="html"><![CDATA[<p><strong>UPDATE:</strong> Most of these issues are fixed in Ganymede SR2, and I am using the OSGi update mechanism now.</p>
+
+<!-- more -->
+
+
+<p><a href="http://www.eclipse.org/">Eclipse</a> is a great tool with its main strength being its modular architecture.  Everything is a module, and modules can bee updated from within Eclipse.  This architecture propelled Eclipse into the leading IDE for Java and J2EE developers, as well as for other languages and platforms.  Vendors who have taken advantage of this architecture to base their IDEs on Eclipse are the who&rsquo;s who of the software world.</p>
+
+<p>Soon enough, with versions and sub-projects, updates became a hassle. So, we ended up with the &lsquo;train release&rsquo; concept from Eclipse &ndash; Europa and then Ganymede &ndash; a release of various plug-ins and modules that have been tested together. With the excellent experience of Europa behind me, I replaced it with Ganymede &ndash; so high were the expectations that I did not keep a backup.</p>
+
+<p>Along comes the popularity of <a href="http://www.osgi.org/">OSGI</a> as a universal software component architecture.  Eclipse could only have become better with it, but unfortunately, it was released while it was still not user-friendly and did not enhance productivity.  I was spending a lot of time reconciling updates, and many times, P2 (as the Eclipse OSGi toolset is called) just wouldn&rsquo;t leave me with a way out.  With a DSL Internet connection, it would take hours or just hang while resolving dependencies, downloading dependency files from every plugin site.  In short, it was a nightmare, and to top it off, it did not run in the background.</p>
+
+<p>Looking around, it was apparent that the old plugin manager &ndash; &lsquo;Classic Update&rsquo; &ndash; was still available in all Ganymede versions but that it could only be activated through the Preferences menu in the SDK version.</p>
+
+<p>And then I found the way to remove p2.  It is official &ndash; right from Eclipse web sites &ndash; and it works: <a href="http://wiki.eclipse.org/Equinox_p2_Removal">http://wiki.eclipse.org/Equinox_p2_Removal</a></p>
+
+<p>There is also an <a href="https://bugs.eclipse.org/bugs/attachment.cgi?id=110125">automated script</a> available, but I was not brave enough to run it, although I used the <code>config.ini</code> and <code>eclipse.ini</code> files included in it.  Also, I moved the directories and files to another folder instead of deleting them.  This way I had an easy way out in case this did not work.  But it worked very well, and I had a reliable speedy Eclipse back.  However, I have an invalid configuration which means the vaunted p2 did not do its job properly while it was in charge.</p>
+
+<p>We&rsquo;ll have to wait for a more stable version of OSGi in Eclipse.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using IBM Rational Version 7.0 IDE]]></title>
+    <link href="http://www.akber.com/ibm-rad-7-with-commerce-6"/>
+    <updated>2008-10-04T14:10:00+01:00</updated>
+    <id>http://www.akber.com/ibm-rad-7-with-commerce-6</id>
+    <content type="html"><![CDATA[<p><strong>(Note: This technique is NOT supported by IBM)</strong> IBM&rsquo;s Rational family of IDE&rsquo;s (integrated development environments) are based on the Eclipse<a name='sdendnote1anc' href='#sdendnote1sym'><sup>1</sup></a> platform. IBM WebSphere Commerce Developer 6.0<a name='sdendnote2anc' href='#sdendnote2sym'><sup>2</sup></a> is one member of the family that is based on the Rational Application Developer 6.0<a name='sdendnote3anc' href='#sdendnote3sym'><sup>3</sup></a> and the WebSphere Application Server 6.0<a name='sdendnote4anc' href='#sdendnote4sym'><sup>4</sup></a>.</p>
+
+<!-- more -->
+
+
+<p>Rational Application Developer 7.0.x (RAD7) and other members of this family are based on an architecture that is significantly different from the Rational 6.0.x (RAD6) family. Since it is based on Eclipse 3.2.1 and can re-use existing Eclipse installations, many developers are finding that using RAD7 enhances productivity and allows the use and update of non-IBM Eclipse plug-ins as well using new Eclipse features.</p>
+
+<p><strong>Note: This process has been tested with RAD and RSA (Rational Software Architect)</strong></p>
+
+<p>The Commerce Developer environment can be created inside RAD7, with little or no limitation to functionality. There are two ways to do this:
+1. Keep both RAD6 and RAD7 (easiest)
+2. Use RAD7 only (requires modifications to Commerce Toolkit batch files and setup process).</p>
+
+<p>For a detailed <a href='#analysis'>analysis</a>, read the analysis section below.</p>
+
+<p><a name='rad7withcommerce6'>&nbsp;</a></p>
+
+<h2>Quick Steps (keep both RAD6 and RAD7)</h2>
+
+<ol>
+<li>Make sure you have a working Commerce Development environment with RAD6.</li>
+<li>Backup the <code>TOOLKIT\workspace</code> into a zip file and call it <code>workspaceRAD6.zip</code></li>
+<li>Open <code>RAD6_HOME\runtimes\base_v6\properties\profileRegistry.xml</code>. Find the entry for your WAS/WC profile, for example:
+<code>&lt;profile isDefault="false" name="WCTOOL~2_135924" path="C:\IBM\WCTOOL~2\wasprofile" template="C:\IBM\Rational\SDP\6.0\runtimes\base_v6\profiletemplates\default"/&gt;</code></li>
+<li>Open <code>RAD7_HOME\runtime\base_v6\runtimes\profileRegistry.xml</code>. Copy the entry from above and update the template path to RAD7. Save the file.</li>
+<li>Start RAD7 and point it to the workspace folder.</li>
+<li>Automatic migration will start – do NOT interrupt it – go into the Window->Preferences->Validation Dialog, and remove HTML, JSP and XML validation.</li>
+<li>After migration completes, if any of the Commerce projects shows errors, correct them. If the errors are just JSP, HTML or XML errors that were flagged before the validators could be turned off, then just clean the projects (Project->Clean).</li>
+<li>Two simple WebSphere servers will have been created (6.0 and 6.1) and Commerce Server will not be present. Create a new server:<br/>
+<img src="http://www.akber.com/assets/2008/CreateServer.jpg" alt="" /></li>
+<li>Pickup the configuration from the drop-down:<br/>
+<img src="http://www.akber.com/assets/2008/PickupConfig.jpg" alt="" /></li>
+<li>Add the Commerce EAR, Next, Next and Finish: <br/>
+<img src="http://www.akber.com/assets/2008/AddCommerceApp.jpg" alt="" /></li>
+<li>Open the server description, change and save (make sure to turn UTC off).  Also make sure that Automatic Publishing is turned off (will save a lot of time): <br/>
+<img src="http://www.akber.com/assets/2008/RenameServer.jpg" alt="" /></li>
+<li><strong>THIS STEP MAY or MAY NOT BE REQUIRED &ndash; only DO if the SERVER cannot find your PROJECTS in the workspace</strong> : Copy the <code>looseconfigurations</code> folder to a new location :</li>
+</ol>
+
+
+<br/>FROM:`TOOLKIT\workspace\.metadata\.plugins\com.ibm.wtp.j2ee\looseconfigurations`
+
+
+<br/>TO:`TOOLKIT\workspace\.metadata\.plugins\com.ibm.etools.wrd.websphere.v6\looseconfigurations`
+
+
+<ol>
+<li>Start the server and everything should be fine.</li>
+</ol>
+
+
+<p><strong>NOTE:</strong> If you plan to perform any automated workspace modifications like SETUP.BAT, or apply FIXPACKS that do the same, you will have to backup/delete or rename the RAD7 workspace, unzip the backed up RAD6 workspace and then run the modification. Afterwards, you should repeat the above steps again.</p>
+
+<h2>Complex Method (using RAD7 only)</h2>
+
+<ol>
+<li>Make sure you have a working Commerce Development environment with RAD6. Makes sure you devise a backup scheme for all the changes here:</li>
+<li>Backup the <code>TOOLKIT\workspace</code> into a zip file and call it <code>workspaceRAD6.zip</code></li>
+<li>Delete folder <code>TOOLKIT\workspace\.metadata</code></li>
+<li>Backup and delete folder <code>TOOLKIT\wasprofile</code></li>
+<li>Change <code>setenv.bat</code> to point to RAD7 home folder: <code>RAD_HOME</code> variable</li>
+<li>In the <code>TOOLKIT\bin</code> folder, search and change all instances of <code>%RAD_HOME%\eclipse\jre\bin\java</code> to <code>%RAD_HOME%\jdk\jre\bin\java</code></li>
+<li>Change <code>setup.bat</code> to comment out the call to <code>setupPlugins.bat</code></li>
+<li>In <code>TOOLKIT\setup\setup.xml</code>, comment out the following elements: <code>&lt;importPreferences . . . . /&gt;, &lt;validationPreference . . . /&gt;, &lt;ejbDeploy . . ./&gt;, and &lt;configureServer . . . .&gt;</code></li>
+<li>Run setup.bat – it will fail towards the end, do not worry.</li>
+<li>Follow all the instructions in the <a href='#rad7withcommerce6'>Quick Steps</a> method above. Before starting the server, run setdbtype.bat to move to DB2.</li>
+<li>Import your non-IBM-provided projects into the workspace.</li>
+</ol>
+
+
+<p><a name='analysis'>&nbsp;</a></p>
+
+<h2>Analysis</h2>
+
+<p>To support development in RAD, the Commerce toolkit provides a workspace, batch files for workspace manipulation, and RAD Plug-ins.</p>
+
+<p><strong>Plug-ins:</strong> None of the toolkit-provided plug-ins is absolutely required. Here is a summary:
+1. Documentation plug-ins: These can be unzipped and put into RAD7 in the SDP70\plugins folder, and they work fine.
+2. ITLM plug-in: Do not install this as it conflicts with RAD fixpack 7.0.0.1
+3. Optimistic Locking UI plug-in: This seems to work in RAD 7, but I have never had the opportunity to use it.
+4. CommerceToolkitPlugin and ToolkitFeature: These contain ANT tasks that are implemented as Eclipse plug-ins in order to take advantage of certain Eclipse server features and to include the tasks in the exported ANT tasks list. We commented out these tasks in Step 8 of the Complex method above. Parts of these plug-ins can be used after tweaking the &lsquo;requires&rsquo; section of the plugin.xml. The server part is known to not work as it works with the IBM server plug-ins and not the new Eclipse server support framework.</p>
+
+<p><strong>Flow of setup.bat and setup.xml ANT build script:</strong> Import plug-ins into the workspace, import the projects and setup workspace preferences (most of which are obsolete in RAD7). Create a WAS profile, and import it into the workspace, and set certain properties of the newly-created server. Then publish the WC application. You can now see easily how these steps correspond to the steps above.</p>
+
+<p><strong>WebSphere version:</strong> The runtime WebSphere 6.0 version that comes with RAD7 is above 6.0.2.11. This level is supported for Commerce but with certain patches. Please read the relevant IBM-supplied tech notes and documents.</p>
+
+<p><a name='sdendnote1sym' href='#sdendnote1anc'>1</a>&nbsp;http://www.eclipse.org</p>
+
+
+<p><a name='sdendnote2sym' href='#sdendnote2anc'>2</a>&nbsp;http://www.ibm.com/software/genservers/commerce/commercestudio/</p>
+
+
+<p><a name='sdendnote3sym' href='#sdendnote3anc'>3</a>&nbsp;http://www.ibm.com/software/awdtools/developer/application/index.html</p>
+
+
+<p><a name='sdendnote4sym' href='#sdendnote4anc'>4</a>&nbsp;http://www.ibm.com/software/webservers/appserv/was/</p>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

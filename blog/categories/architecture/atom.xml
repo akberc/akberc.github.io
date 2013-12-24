@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Architecture | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/architecture/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Overview of ITIL-based Application Backup and Recovery]]></title>
+    <link href="http://www.akber.com/overview-of-itil-based-application-backup"/>
+    <updated>2012-03-25T14:11:36+01:00</updated>
+    <id>http://www.akber.com/overview-of-itil-based-application-backup</id>
+    <content type="html"><![CDATA[<p><em>Derived from a subset of IT Service Continuity Management (ITIL v3 ITSCM):</em> ITIL v3 ITSCM considers application backup and recovery as one of the risk mitigating factors in assuring service continuity. This is a brief discussion of commonly understood IT application backup and recovery methods within the ITIL v3 ITSCM framework.</p>
+
+<!-- more -->
+
+
+<p>In ITIL v3, ITSCM (IT Service Continuity Management) is defined as:</p>
+
+<blockquote><p><em>‘The goal of ITSCM is to support the overall Business Continuity Management process by ensuring that the required IT technical and service facilities (including computer systems, networks, applications, data repositories, telecommunications, environment, technical support and Service Desk) can be resumed within required, and agreed, business timescales.’ (ITIL v3 ITSCM 4.5.1)</em></p></blockquote>
+
+<p>Within each of the four stages of ITSCM, backup and recovery planning and the testing and invocation of its procedures, is mapped as follows:</p>
+
+<h2>Stage 1 &ndash; Initiation</h2>
+
+<blockquote><p><em>Resource allocation: Depending on the maturity of the organization, with respect to ITSCM, there may be a requirement to familiarize and/or train staff to accomplish the Stage 2 tasks. Alternatively, the use of experienced external consultants may assist in completing the analysis more quickly. However, it is important that the organization can then maintain the process going forward without the need to rely totally on external support. (ITIL v3 ITSCM 4.5.5.1)</em></p></blockquote>
+
+<p>In other words, the ultimate ownership of the backup and recovery strategy and processes lies with the organization itself.</p>
+
+<h2>Stage 2 &ndash; Requirements and Strategy</h2>
+
+<p>Once the Business impact Analysis and Risk Analysis has been done, backup and recovery of applications and data is usually one of many Risk Response Measures.</p>
+
+<blockquote><p><em>A comprehensive backup and recovery strategy, including off-site storage. (ITIL v3 ITSCM 4.5.5.2)</em></p></blockquote>
+
+<p>The recovery procedures are defined first, and then backup procedures and their frequency are based on the needs of the recovery procedures.</p>
+
+<p>Common recovery options include:
+1. <strong>Cold Standby</strong> (Gradual Recovery): Servers need to be reconfigured and applications deployed, and this can take days or weeks.
+2. <strong>Warm Standby</strong> (Intermediate Recovery): From minutes to a few hours, this option requires servers and applications already configured and deployed, that need to be connected to the production infrastructure (using network or other techniques. By engaging a third party to host alternate hardware, this technique can also be used for disaster recovery.
+3. <strong>Hot Standby</strong> (Immediate or Fast Recovery): This option requires redundant hardware and applications that may or may not be at the same physical location, which automatically take over, without minimal interruption to IT services.</p>
+
+<h2>Stage 3 &ndash; Implementation</h2>
+
+<p>In this stage, backup and recovery processes are implemented using one or more of the following types of tests:
+1. Theoretical Testing: Concerned individuals meet to assess the effectiveness of the backup and recovery procedures
+2. Announced and unannounced full testing: this is a full dress rehearsal.
+3. Partial testing and event-based testing: this is a subset of full testing.</p>
+
+<h2>Stage 4 &ndash; Ongoing Operations</h2>
+
+<blockquote><p><strong>Testing</strong> – <em>following the initial testing, it is necessary to establish a programme of regular testing to ensure that the critical components of the strategy are tested, preferably at least annually, although testing of IT Service Continuity Plans should be arranged in line with business needs  &hellip;  All plans should also be tested after every major business change. (ITIL v3 ITSCM 4.5.5.4)</em></p></blockquote>
+
+<p>Recovery Invocation
+When disaster strikes, the organization needs to put the recovery plans into action:
+* Retrieval of backup tapes, data documentation, procedures, software images etc. from on-site or off-site locations
+* Mobilization of the appropriate technical personnel to commence the recovery of required systems, servers, applications and services
+* Contacting and putting on alert customers, partners, service providers, application vendors, etc. who may be required to undertake actions or provide assistance in the recovery process</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setting Up the RDS Database Instance]]></title>
+    <link href="http://www.akber.com/setting-up-the-rds-database-instance"/>
+    <updated>2011-12-12T23:10:00+00:00</updated>
+    <id>http://www.akber.com/setting-up-the-rds-database-instance</id>
+    <content type="html"><![CDATA[<p><strong>Update:</strong> Amazon AWS RDS can now be configured from the AWS Web console</p>
+
+<!-- more -->
+
+
+<p>Although the RDS is a service and we are not supposed to think of it as a machine, it is just like an EC2 instance.  We have to use the command-line tools, as RDS instances &mdash;do not show up under&mdash; the <a href="https://console.aws.amazon.com/ec2/home">EC2 console</a> <em>(they do as of 2010-05-26)</em> or in other tools like <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=609">ElasticFox</a>.  This toolkit should run on your local machine, and without going into too much detail, please make sure that the following environment variables are set &mdash; here is an excerpt of a shell script that I use to set up my RDS environment and I run it in the folder where I unzipped the <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=2928">RDS command-line tools</a>
+<div>
+  <pre><code class='html'>export AWS_RDS_HOME=&lt;code&gt;pwd&lt;/code&gt;
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/jre
+export AWS_CREDENTIAL_FILE=~/.ec2-credential-file
+export PATH=$PATH:$AWS_RDS_HOME/bin
+export EC2_REGION=eu-west-1b</code></pre>
+</div>
+</p>
+
+<p>Note that there a few ways to access Amazon Web Services, one of which uses the access key and credentials, and  I leave my credentials file hidden in my home folder.  It should look like this:
+<div>
+  <pre><code class='html'>AWSAccessKeyId=AAAAAAAAAAAAAAAAAAAAAAAAAA
+AWSSecretKey=ZZZZZZZZZZZZZZZZZZZZZZZZZzZZ</code></pre>
+</div>
+</p>
+
+<p>Note that redundancy is provided through automated backups, retention periods, snapshots, and multi-AZ (availability zones) provided by the Amazon AWS Cloud itself.</p>
+
+<p>We will create the RDS instance, change some server parameters and allow access to it from the cloud instance(s) that will run the application:<br/>
+<div>
+  <pre><code class='html'>rds-create-db-instance ZZZZZ &amp;mdash;allocated-storage NN &amp;mdash;db-instance-class db.m1.small &amp;mdash;engine MySQL5.1 &amp;mdash;master-username MMMM &amp;mdash;master-user-password xxxxxxxxxx &amp;mdash;backup-retention-period 7 &amp;mdash;availability-zone eu-west-1b &amp;mdash;headers&lt;/p&gt;
+
+&lt;h1&gt;WAIT UNTIL INSTANCE IS CREATED (use rds-describe-db-instances to view progress)&lt;/h1&gt;
+
+&lt;h1&gt;Set up server for UTF-8 operations&lt;/h1&gt;
+
+&lt;p&gt;rds-create-db-parameter-group utf8 &amp;mdash;engine mysql5.1 &amp;mdash;description &amp;ldquo;Parameters for UTF-8&amp;rdquo;
+rds-modify-db-parameter-group utf8 &amp;mdash;parameters=&amp;ldquo;name=character_set_server, value=utf8,method=immediate&amp;rdquo;
+rds-modify-db-instance appsdb &amp;mdash;db-parameter-group-name utf8&lt;/p&gt;
+
+&lt;h1&gt;Reboot the instance&lt;/h1&gt;
+
+&lt;p&gt;rds-reboot-db-instance appsdb&lt;/p&gt;
+
+&lt;h1&gt;WAIT UNTIL parameters are applied and reboot is complete&lt;/h1&gt;
+
+&lt;h1&gt;Allow access from the EC2 application instances.  We assume that we arleady have an EC2 security group called apps.  It can be anything, and contain anything, as long as it is the security group that is (or will be) applied to the apps cloud instances:&lt;/h1&gt;
+
+&lt;p&gt;rds-authorize-db-security-group-ingress Default &amp;mdash;ec2-security-group-name apps &amp;mdash;ec2-security-group-owner-id 999988881111&lt;/p&gt;
+
+&lt;h1&gt;Ensure that all went well.  Some columns have been ommitted.  Make a note of the DNS names.  The mySQL client and the applications will refer to it&lt;/h1&gt;
+
+&lt;p&gt;rds-describe-db-instances &amp;mdash;headers
+DBINSTANCE  DBInstanceId   ~~~~  Status     Endpoint Address                          Port  AZ          Backup Retention  Multi-AZ
+DBINSTANCE  social               available  appsdb.xxxxx.eu-west-1.rds.amazonaws.com  3306  eu-west-1b  7                 n      
+      SECGROUP  Name     Status
+      SECGROUP  default  active
+      PARAMGRP  Group Name  Apply Status
+      PARAMGRP  utf8        in-sync</code></pre>
+</div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Resilient Crowd, Jira and Confluence on Amazon EC2 and RDS]]></title>
+    <link href="http://www.akber.com/resilient-crowd-jira-confluence-amazon-ec2"/>
+    <updated>2011-12-11T23:10:00+00:00</updated>
+    <id>http://www.akber.com/resilient-crowd-jira-confluence-amazon-ec2</id>
+    <content type="html"><![CDATA[<p><strong>This page is out-of-date.</strong>  Atlassian has come out with cloud pay-as-you-go pricing <a href="http://www.atlassian.com/software/ondemand/overview">(OnDemand)</a> which is now recommended instead of the 10-user license mentioned below.</p>
+
+<!-- more -->
+
+
+<p>These are three tools that I cannot do without, and thanks to new Atlassian licensing options, I don&rsquo;t have to do without them.  Based on emerging cloud philosophy, I don&rsquo;t want to worry about routine things, and will let the cloud take care of as much as possible. Keeping this principle in mind, let us look at our topology:</p>
+
+<ol>
+<li>Assume DNS and LDAP exist somewhere &mdash; out of scope of this discussion.  DNS and LDAP are the keys to the kingdom, and healthy paranoia dictates that they are hosted separately.</li>
+<li>Our data would be stored in a small <a href="http://aws.amazon.com/rds/">Amazon RDS</a> instance, which is basically a MySQL machine with controlled parameters and access.  We do not want to worry about backups, standbys etc.  Let the cloud take care of it.</li>
+<li>For the four applications that we are going to deploy, we will use an existing Linux distribution that can be booted off a virtual disk and can be saved back to it!  Amazon calls this an <a href="http://aws.amazon.com/ebs/">EBS (Elastic Block Storage)</a> <a href="http://en.wikipedia.org/wiki/Amazon_Machine_Image">AMI (Amazon Machine Image)</a>.  Ubuntu is very serious about the cloud and we will use its 10.04 (Lucid Lynx) EBS image as a starting point.  Since we are going with a small machine, and they are only available in 32-bit yet, we will go for the <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3102">Ubuntu 10.04 32-bit server</a>.</li>
+</ol>
+
+
+<p>I will try to keep things at an intermediate complexity level, so that even if you are not familiar with the Amazon Cloud, you can follow along, and clarify concepts by clicking on the links.  Also, based on security principles (and the secure <a href="http://aws.amazon.com/mfa/">multi-factor authentication</a> by Amazon), any techniques that you may have learned in which you put your access keys on one cloud machine in order to access another, should be forgotten.</p>
+
+<ol>
+<li><strong>Principle 1:</strong> Let the cloud handle as many routine things as it can, and follow its lead instead of fighting with it.</li>
+<li><strong>Principle 2:</strong> Your access key, secret key and certificate private key should be with you, and never on any cloud machine.</li>
+<li><strong>Principle 3:</strong> Unless you need redundancy and serving speed on a global scale, or you want to hedge against your Cloud provider melting down, keep all your cloud instances in one availability zone.</li>
+</ol>
+
+
+<p>If you do not have one, create an EC2 account, and get yourself &mdash;
+* Two elastic IPs,
+* One Security Group called &lsquo;apps&rsquo; in addition to the default one, and
+* an EBS volume for your app data (50 GB is a good start) called <code>/dev/sdf</code>.</p>
+
+<p>The pages below contain the general technical flow and discussion and, in addition, I will try to mention how redundancy and reliability can be designed and built into the topology.  In this way, the system administrator&rsquo;s approach to availability and performance becomes different and less complex.</p>
+
+<p>Next: <a href="http://www.akber.com/architecture/2011/12/12/setting-up-the-rds-database-instance/">Setting up the RDS Database Instance</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Proposal Submission and Management System on Atlassian JIRA]]></title>
+    <link href="http://www.akber.com/atlassian-jira-as-a-workflow-platform"/>
+    <updated>2009-11-07T23:10:00+00:00</updated>
+    <id>http://www.akber.com/atlassian-jira-as-a-workflow-platform</id>
+    <content type="html"><![CDATA[<p><strong>An Issue is an Issue</strong> : Alassian JIRA is all about issues.  In fact, Atlassian sends out T-shirts saying &lsquo;Because you&rsquo;ve got issues&rsquo;!  We first started using JIRA in a purely development support role, but then we read a case study from a company that was using JIRA for their new-hire orientation process.  </p>
+
+<p>We had a particularly challenging project that had a three-month implementation plan (which we took rather seriously), and which required a fairly sophisticated workflow.  The requirements called for researchers (end users) submitting research proposals under multiple disciplines which went through a combined workflow, then an approval particular for for the specific discipline that included external reiewers, and then again through a combined workflow for final granting or rejection.</p>
+
+<!-- more -->
+
+
+<h2>Software Stack for the Solution</h2>
+
+<p>The client and the project team had chosen <a rel='nofollow' href='http://seamframework.org/'>JBoss Seam</a> as the front-end, primarily due to its close integration with JBoss application server and jBPM as well as the Drools rules engine, but also due to the <i>portletbridge</i> API that allowed a Seam application to run inside JBoss Portal.  Developing with an agile methodology, we were still undecided whether we were going to use jBPM for the actual workflow or come up with something else.  As the requirements poured in, it became apparent that a number of persistence, data, security and administration interaction artefacts would have to be developed in order to support the workflow in jBPM. </p>
+
+<br/>
+
+
+<br/>
+
+
+<p>As you may have guessed by now, we decided to use JIRA as the workflow back-end:  end users would access the Seam application, which would use JIRA through its Web Services API for workflow and persistence.  The original user interface of JIRA would be modified using string replacements to provide the administration interface.  Persistence and file attachments were transparent.  It would work!</p>
+
+<h2>Interface Customisation</h2>
+
+<p>Projects and sub-projects became &lsquo;research disciplines&rsquo;, issues became &lsquo;research proposals&rsquo;, and releases became &lsquo;call for papers&rsquo;. The OSWorkflow engine proved to be very flexibile, and transition screens provided the approval input.</p>
+
+<h2>Identity Integration</h2>
+
+<p>So far, so good!  Now came some tricky security issues:
+* External users (researchers) were being authenticated by a distributed authentication mechanism, and their user id was provided to the front-end application.  By setting up a trusted symmetric key between the front-end application and JIRA, existing users could be looked up and new users created in JIRA.
+* When new users logged in to the front-end, they would be automatically logged in to JIRA using the SOAP API client, with a custom algorithm that bypasses the regular credential check (database password), substituting it for another type of credential check.  This was implemented as another authentication Java class similar to the LDAP authentication Java class that ships with JIRA.  This type of login would only be valid when coming through the SOAP API, in order to avoid inadvertent end-user authentication on the back-end administration interface should they have physical or network access to the administration interface.
+* Finally, on the back-end administration interface, a &lsquo;real&rsquo; administrator login (user and password in database) would still be authenticated due to the built-in JIRA login architecture that goes through all possible authenticators one by one.</p>
+
+<h2>Seam Integration and Testing</h2>
+
+<p>The SOAP client derived  from the JIRA WSDL was wrapped in Seam components:
+* a UserClient &ndash; that held the authentication token for the logged-in user.
+* an AdminClient &ndash; extending the UserClient, but holding an administration login token in order to create new users or look up existing users, and perform other administrative functions through the SOAP API.</p>
+
+<p>Both of these clients were extended into &lsquo;mock&rsquo; scope components in Seam in order to simulate a back-end JIRA using a couple of HashMaps embedded within the mock clients.  This allowed the front-end developers to progress rapidly with their work while not depending on back-end JIRA configuration that was proceeding at its own pace.  For example, when the front-end created a proposal (issue) and called the API to persist it, the mock client would just store the RemoteIssue object into a HashMap keyed by the issue ID.  All subsequent calls to the mock client using that key would retrieve the same RemoteIssue object.</p>
+
+<p>Drop us an email (address on main page of this site) for the source code for the mock JIRA service.</p>
+
+<p>This was a somewhat unorthodox use of JIRA, but this approach resulted in a robust, scalable and feature-rich platform.  The unlimited-user license for JIRA is an expense, but replicating the features of the system would be at an even greater cost.  The system was deployed in February 2009 at <a rel='nofollow' href='https://www.trc.gov.om/portal/sec/portal/default/TRESS'><a href="https://www.trc.gov.om/portal/sec/portal/default/TRESS">https://www.trc.gov.om/portal/sec/portal/default/TRESS</a></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Streaming Stored Audio]]></title>
+    <link href="http://www.akber.com/streaming-stored-audio"/>
+    <updated>2009-08-17T00:10:00+01:00</updated>
+    <id>http://www.akber.com/streaming-stored-audio</id>
+    <content type="html"><![CDATA[<p>When streaming stored audio, does it make sense to run the application over UDP or TCP at the transport layer? Here is a brief summary based on the the products of RealNetworks and Microsoft:</p>
+
+<!-- more -->
+
+
+<p>Let us say we have stored audio that we want to stream. The two most common problems are:
+1. The audio may or may not be stored in a compressed state. Compressed audio is less loss-tolerant than uncompressed purely due the reason that lossy compression (most common types of audio  compression are lossy) has already taken out a lot of the data that would have been undetectable by the human ear.
+2. The time-sensitivity of stored audio is less than that of realtime audio <a href="#footnotes">1</a> as the client application can cache part of the stream that is yet to play and hence have some tolerance.</p>
+
+<h3>Streaming stored audio over UDP transport:</h3>
+
+<ul>
+<li>ADVANTAGE: It does not have the overhead of TCP connection management overhead, and can result in better quality</li>
+<li>ADVANTAGE: It can use multiple ports and much faster speeds.</li>
+<li>DISADVANTAGE: It still needs some type of control protocol &mdash; over another UDP port or a TCP connection.</li>
+<li>DISADVANTAGE: It cannot travel well over firewalls, NAT (network address translation) and some type of routers.</li>
+<li>DISADVANTAGE: If the stored audio is lossy compressed, potential packet loss may reduce quality to below an arbitrary threshold.</li>
+</ul>
+
+
+<h3>Streaming stored audio over TCP transport</h3>
+
+<ul>
+<li>ADVANTAGE: For lossy stored audio, it can guarantee a minimum level of sound quality.</li>
+<li>ADVANTAGE: It can pass over firewalls and NAT setups much more easily.</li>
+<li>ADVANTAGE: It does not require an extra control channel. TCP itself provides the control and application-level protocols can piggyback on to the same channel.</li>
+<li>DISADVANTAGE: Due to TCP connection management overhead, its throughput may be lower.</li>
+<li>DISADVANTAGE: It is highly impractical to use multiple TCP connections for the same stream.</li>
+</ul>
+
+
+<h3>REALNETWORKS</h3>
+
+<p>At the application level (client) RealNetworks products support RTSP (Real Time Streaming Protocol) <a href="#footnotes">2</a> for the control protocol and either RDT (a proprietary RealNetworks protocol) or RTP (Realtime Transport Protocol) as the data protocol <a href="#footnotes">4</a>. For backward compatibility, PNA (an older RealNetworks proprietary protocol) is still supported, both for control and data and we will not discuss this further.</p>
+
+<p>RTSP runs as a HTTP-like protocol over one or more sequential TCP connections for the duration of the stream (state maintained on server). This is the first connection to be established and it helps in selecting a transport (UDP, multicast UDP or TCP) for the data protocol. In case of no other feasible option, the RTSP connection can also handle the data, although of a much lower quality. The preferred protocol for the data in the RealNetworks client (RealPlayer) is RDT over UDP, although it cleverly uses RTSP to find the ideal transport mechanism. Transport preference for the data part can be explicitly overriden in RealPlayer.</p>
+
+<p>UDP is preferred as the transport by RealPlayer due to the better media quality (less overhead) and multiple port options available under UDP. RTP and RTCP, when running over UDP, take advantage of the
+checksum capabilities of UDP.</p>
+
+<h3>MICROSOFT</h3>
+
+<p>The Microsoft realtime protocol stack is very similar to that of RealNetworks <a href="#footnotes">5</a>. While older versions use the MMS (Microsoft proprietary protocol), newer versions use RTSP over either UDP or TCP. Again, UDP is preferred, but the transport can be overriden by user choice in the Windows Media Player.</p>
+
+<p>Unique to Microsoft, the RTSP protocol piggybacking is used to deliver content, and like RealNetworks, HTTP can be used entirely, but obviously without some of the additional negotiating and control services provided by RTSP.</p>
+
+<p><a name="footnotes">&nbsp;</a></p>
+
+<h3>References</h3>
+
+<p>[1] Kurose and Ross, Computer Networking, Third Edition, p. 84,
+figure 2.4 
+</p>
+
+
+<p>[2] http://www.rtsp.org/ 
+</p>
+
+
+<p>[3] http://www.ietf.org/rfc/rfc1889.txt 
+</p>
+
+
+<p>[4]
+http://service.real.com/help/library/guides/productiong261/htmfiles/whatsnew.htm
+</p>
+
+
+<p>[5]
+http://www.microsoft.com/windows/windowsmedia/serve/firewall.aspx 
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

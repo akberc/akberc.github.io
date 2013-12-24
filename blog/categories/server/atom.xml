@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Server | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/server/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fluent HttpClient for APIs]]></title>
+    <link href="http://www.akber.com/fluent-httpclient-for-apis"/>
+    <updated>2013-04-20T18:30:51+01:00</updated>
+    <id>http://www.akber.com/fluent-httpclient-for-apis</id>
+    <content type="html"><![CDATA[<p>The new HttpClient provides a fluent interface that is quite intuitive. However, any non-trivial implementation soon starts to miss the flexibility of configuring the connection manager. As a pre-configured HttpClient can be passed into the fluent Executor, it is not necessary to configure it each time.</p>
+
+<p>posted at <a href="http://java.dzone.com/tips/fluency-and-control-httpclient">http://java.dzone.com/tips/fluency-and-control-httpclient</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First Looks: IBM SmartCloud Enterprise]]></title>
+    <link href="http://www.akber.com/first-looks-ibm-smartcloud-enterprise"/>
+    <updated>2012-07-29T19:15:20+01:00</updated>
+    <id>http://www.akber.com/first-looks-ibm-smartcloud-enterprise</id>
+    <content type="html"><![CDATA[<p><a href="http://www.akber.com/assets/2012/ibm-sce.png"><img src="http://www.akber.com/assets/2012/ibm-sce.png" alt="ibm-sce" /></a></p>
+
+<p>Last year, there was an opportunity to participate in IBM&rsquo;s Cloud Beta and I <a href="http://www.akber.com/ibms-test-and-dev-cloud/">wrote about</a> some initial impressions.</p>
+
+<p>IBM have now rolled this out with geographically dispersed data centres.  Even with some terms being unique to IBM, the provisioning of instances and management of images should be familiar to those who have worked with Amazon&rsquo;s EC2 and related cloud services.</p>
+
+<p>This gives &lsquo;true Blue&rsquo; customers an option to entrust sensitive systems to a cloud provider with whom there is an existing relationship.  It will be interesting to see how this offering from IBM stacks up against managed services from IBM.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The App Is King]]></title>
+    <link href="http://www.akber.com/the-app-is-king"/>
+    <updated>2011-10-27T15:41:00+01:00</updated>
+    <id>http://www.akber.com/the-app-is-king</id>
+    <content type="html"><![CDATA[<p>Networks, storage, and all other information technology infrastructure are fairly complicated things and it takes substantial planning and flawless execution to get it right.</p>
+
+<p>Project managers and analysts do great work to ensure that what runs on these infrastructure systems is properly specified and delivered on time.</p>
+
+<p>And with all this hard work, and whether data is delivered over 4G mobile or 10G ethernet, all that users see is the App.  Nothing matters if the app is not there when the user wants it, and how the user wants it.</p>
+
+<p>The App is King.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IBM Finally Gets It With WebSphere 8.5 'Liberty']]></title>
+    <link href="http://www.akber.com/ibm-finally-gets-it-with-websphere-8-5-liberty"/>
+    <updated>2011-10-16T10:10:00+01:00</updated>
+    <id>http://www.akber.com/ibm-finally-gets-it-with-websphere-8-5-liberty</id>
+    <content type="html"><![CDATA[<p>Finally!  Some long-needed innovation in WebSphere application servers from IBM, and some fresh thinking that may boost the long-term viability of IBM leadership in middleware software.</p>
+
+<!-- more -->
+
+
+<p>Whether it is the pressure from Oracle or open-source innovation, or a long-overdue grounds-up overhaul of the WebSphere application server architecture that has been stagnant since version 5.0 &mdash; it is looking good.  A start-up time of 5 seconds, grounds-up OSGI with optional features, drop-in deployments and no installer with a zip file of under 50MB.  No installer!  At least in the alpha version that we had a chance to preview today.</p>
+
+<p>There is still a lot to be done with the version numbering.  What is this thing about releasing major technology refreshes on a minor version number?  8.0 was really 7.0+  and 6.1 was a step up from 6.0.  The desire to have a common version number across the WebSphere family really did not go anywhere.  We have Lotus Quickr 8.1 on WebSphere 6.0 and Portal 7.0 on WebSphere 6.1 and the list goes on.  Sometimes, a version refresh of WebSphere was that &mdash; a version refresh.  And don&rsquo;t get me started on the dubious software strategy of the same product on two completely different technology platforms &mdash; the infamous Quickr &mdash; the less said about the Portal version the better.</p>
+
+<p>1998-2004 was a period of great innovation in IBM software, and it has pretty much been stagnant since then. Sometimes it appears that the a flock of MBA-types swooped in and milked the software and all its permutations and all kinds of incremental functionality packaged and marketed as &lsquo;servers&rsquo;.  There was little innovation in the past five years &mdash; so little that even die-hard IBM fans were looking elsewhere to fulfil their Web 2.0 application needs.</p>
+
+<p>On another note, the HTML-only Sametime client was also a long time coming, but it is a welcome presence now that it is here.  How could IBM have missed the use cases for extranet communication and click-to-chat customer service?</p>
+
+<p>Enough criticism.  Keep up the good work, Big Blue.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IBM's Test and Dev Cloud]]></title>
+    <link href="http://www.akber.com/ibms-test-and-dev-cloud"/>
+    <updated>2010-05-20T09:33:00+01:00</updated>
+    <id>http://www.akber.com/ibms-test-and-dev-cloud</id>
+    <content type="html"><![CDATA[<p>IBM is beta-testing its own cloud at <a href="https://www-180.ibm.com/cloud/enterprise/beta/dashboard">https://www-180.ibm.com/cloud/enterprise/beta/dashboard</a>, after a successful experiment with Amazon EC2.</p>
+
+<p>As a company with hardware and operating system roots, it was smart to get on to the cloud bandwagon, which is essentially the commoditization of hardware and operating systems.</p>
+
+<p>A plain Suse instance was not a problem. However, after some initial trouble launching a WebSphere Portal/WCM instance in the wrong-sized machine, I was able to launch an instance in a &lsquo;small&rsquo; machine. I only tried it once, but a WebSphere sMash instance did not launch. My first impression is good &mdash; for a beta-testing environment, and quick proofs of concept, it is very handy.</p>
+
+<p>If you know Amazon EC2, the management console should be pretty much intuitive. The only time I had to read the good online help was when I needed to know the exact user to be used for the SSH session into an instance.</p>
+
+<p>Let us wait and see how IBM manages to position this offering once it is out of beta.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Resilient Crowd, Jira and Confluence on Amazon EC2 and RDS - Akber Choudhry</title>
+  <meta name="author" content="Akber Choudhry">
+
+  
+  <meta name="description" content="This page is out-of-date.  Atlassian has come out with cloud pay-as-you-go pricing (OnDemand) which is now recommended instead of the 10-user license &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.akber.com/resilient-crowd-jira-confluence-amazon-ec2">
+  <link href="/assets/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Akber Choudhry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-387617-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Akber Choudhry</a></h1>
+  
+    <h2>Technology</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.akber.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Resilient Crowd, Jira and Confluence on Amazon EC2 and RDS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-11T23:10:00+00:00" pubdate data-updated="true">Dec 11<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>This page is out-of-date.</strong>  Atlassian has come out with cloud pay-as-you-go pricing <a href="http://www.atlassian.com/software/ondemand/overview">(OnDemand)</a> which is now recommended instead of the 10-user license mentioned below.</p>
+
+<!-- more -->
+
+
+<p>These are three tools that I cannot do without, and thanks to new Atlassian licensing options, I don&rsquo;t have to do without them.  Based on emerging cloud philosophy, I don&rsquo;t want to worry about routine things, and will let the cloud take care of as much as possible. Keeping this principle in mind, let us look at our topology:</p>
+
+<ol>
+<li>Assume DNS and LDAP exist somewhere &mdash; out of scope of this discussion.  DNS and LDAP are the keys to the kingdom, and healthy paranoia dictates that they are hosted separately.</li>
+<li>Our data would be stored in a small <a href="http://aws.amazon.com/rds/">Amazon RDS</a> instance, which is basically a MySQL machine with controlled parameters and access.  We do not want to worry about backups, standbys etc.  Let the cloud take care of it.</li>
+<li>For the four applications that we are going to deploy, we will use an existing Linux distribution that can be booted off a virtual disk and can be saved back to it!  Amazon calls this an <a href="http://aws.amazon.com/ebs/">EBS (Elastic Block Storage)</a> <a href="http://en.wikipedia.org/wiki/Amazon_Machine_Image">AMI (Amazon Machine Image)</a>.  Ubuntu is very serious about the cloud and we will use its 10.04 (Lucid Lynx) EBS image as a starting point.  Since we are going with a small machine, and they are only available in 32-bit yet, we will go for the <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3102">Ubuntu 10.04 32-bit server</a>.</li>
+</ol>
+
+
+<p>I will try to keep things at an intermediate complexity level, so that even if you are not familiar with the Amazon Cloud, you can follow along, and clarify concepts by clicking on the links.  Also, based on security principles (and the secure <a href="http://aws.amazon.com/mfa/">multi-factor authentication</a> by Amazon), any techniques that you may have learned in which you put your access keys on one cloud machine in order to access another, should be forgotten.</p>
+
+<ol>
+<li><strong>Principle 1:</strong> Let the cloud handle as many routine things as it can, and follow its lead instead of fighting with it.</li>
+<li><strong>Principle 2:</strong> Your access key, secret key and certificate private key should be with you, and never on any cloud machine.</li>
+<li><strong>Principle 3:</strong> Unless you need redundancy and serving speed on a global scale, or you want to hedge against your Cloud provider melting down, keep all your cloud instances in one availability zone.</li>
+</ol>
+
+
+<p>If you do not have one, create an EC2 account, and get yourself &mdash;
+* Two elastic IPs,
+* One Security Group called &lsquo;apps&rsquo; in addition to the default one, and
+* an EBS volume for your app data (50 GB is a good start) called <code>/dev/sdf</code>.</p>
+
+<p>The pages below contain the general technical flow and discussion and, in addition, I will try to mention how redundancy and reliability can be designed and built into the topology.  In this way, the system administrator&rsquo;s approach to availability and performance becomes different and less complex.</p>
+
+<p>Next: <a href="http://www.akber.com/architecture/2011/12/12/setting-up-the-rds-database-instance/">Setting up the RDS Database Instance</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Akber Choudhry</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-11T23:10:00+00:00" pubdate data-updated="true">Dec 11<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/architecture/'>architecture</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.akber.com/resilient-crowd-jira-confluence-amazon-ec2" data-via="akberc" data-counturl="http://www.akber.com/resilient-crowd-jira-confluence-amazon-ec2" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/the-app-is-king" title="Previous Post: The App is King">&laquo; The App is King</a>
+      
+      
+        <a class="basic-alignment right" href="/setting-up-the-rds-database-instance" title="Next Post: Setting up the RDS Database Instance">Setting up the RDS Database Instance &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/is-ceylon-enterprise-ready">Is Ceylon Enterprise Ready?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/fluent-httpclient-for-apis">Fluent HttpClient for APIs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/bloatware-destroying-android-experience">Bloatware Destroying Android Experience</a>
+      </li>
+    
+      <li class="post">
+        <a href="/first-looks-ibm-smartcloud-enterprise">First Looks: IBM SmartCloud Enterprise</a>
+      </li>
+    
+      <li class="post">
+        <a href="/software-testing">Software Testing</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/akberc">@akberc</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'akberc',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+AkberChoudhry?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Akber Choudhry -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

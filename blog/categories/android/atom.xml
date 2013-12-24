@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Android | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bloatware Destroying Android Experience]]></title>
+    <link href="http://www.akber.com/bloatware-destroying-android-experience"/>
+    <updated>2012-10-23T14:11:36+01:00</updated>
+    <id>http://www.akber.com/bloatware-destroying-android-experience</id>
+    <content type="html"><![CDATA[<p>Samsung makes beautiful handsets. Can Samsung please stick to doing what they do best? If you were that good at software, would you be latching on to the open-source Android in the first place?  And this goes for vendors other than Samsung as well.</p>
+
+<!-- more -->
+
+
+<p><a href="http://www.wired.com/gadgetlab/2010/07/bloatware-android-phones/"><img src="http://www.wired.com/images_blogs/gadgetlab/2010/07/samsung_galaxy1.jpg" alt="" /></a></p>
+
+<p>I always buy my phones unlocked, so it is not the carrier that is at fault.  I am certain it is the device vendor, especially if the apps mostly begin with &rsquo;S'!  On returning home from buying a shiny new Galaxy Note II, I had to spend half a day Googling which bloatware apps were safe to remove, disabling the ones that could not be removed at all (Android feature?). The other half was spent monitoring background bandwidth usage and disabling it.</p>
+
+<p>It is not only me that is not enjoying this &lsquo;de-boxing&rsquo; experience that spoils the un-boxing fun of purchasing a new device.  Other people are up in arms over this practice as well: <a href="http://www.wired.com/gadgetlab/2010/07/bloatware-android-phones/">Bloatware on Android Phones</a> and <a href="http://androidspin.com/2012/03/18/remove-bloatware-on-t-mobile-samsung-galaxy-s-ii-phones/">Remove Bloatware from Samsung Galaxy</a></p>
+
+<p>This is also a security risk as even I was tempted to &lsquo;root&rsquo; the phones or allow installation of apps from marketplaces other than the Google Play Store.  Most users are  never going to use a Video Hub or a Social Hub or any other Hub.  And now it is becoming more intrusive.  Hey, I even did not install Kaspersky Mobile as it did not come from Google.</p>
+
+<p>On the Note II, the default SMS software, the default Internet browser and the default Music player are ALL bloatware.  Where&rsquo;s Google in all this?  An open software encourages this behaviour, but the marketplace should have some rules, and why can&rsquo;t I remove software that causes no problems when disabled?</p>
+
+<p>Please, don&rsquo;t let my next phone be an iPhone.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google Apps and Blackberry-style Device Wipes]]></title>
+    <link href="http://www.akber.com/google-apps-and-blackberry-style-device-wipes"/>
+    <updated>2012-01-29T17:44:00+00:00</updated>
+    <id>http://www.akber.com/google-apps-and-blackberry-style-device-wipes</id>
+    <content type="html"><![CDATA[<p><a href="http://www.akber.com/assets/2012/remote-wipe.jpg"><img src="http://www.akber.com/assets/2012/remote-wipe.jpg" alt="" /></a></p>
+
+<p>Google is changing and maturing as a corporation, and has recently missed an earnings target.  Rumours abound that Google may be turning &lsquo;evil&rsquo;.  However, I stumbled on to some features that Google has added to its &lsquo;Apps&rsquo; offering that negate that perception.  I use Google Apps for our consultants &mdash; the shared contacts, docs, calendar and email delegation come in very handy.  All these features can be found in Microsoft Exchange or IBM Lotus Notes, but these collaboration suites may not be cost-effective for a small company.</p>
+
+<!-- more -->
+
+
+<p>One of the worries was the access to Google Apps from our Android devices in the unfortunate event of a device being lost or stolen.  Thanks to the &lsquo;<a href="https://market.android.com/details?id=com.google.android.apps.enterprise.dmagent&amp;hl=en">Google Apps Device Policy</a>&rsquo; Android app, I can now set device policies from the Apps administration menu for all employees who access Google Apps.  We&rsquo;ve not had to block or wipe a device yet, but it is comfortable knowing that it can be done.</p>
+
+<p>Now, Blackberry has had that for ages as part of its corporate offerings, but again, what&rsquo;s a small company to do?</p>
+
+<p>It was easy to set up and test, with the only hurdle in implementing our desired policy being the fact that some Android devices do not support data encryption.  Maybe we have to look further and install some software or set some options, but we are good for now.</p>
+
+<p>With two-factor authentication, emergency two-factor codes and now remote Android device wipe, small companies like ours can now have peace of mind.  Combine this with the data liberty features of Google Apps, and Google is not evil &mdash; yet!</p>
+]]></content>
+  </entry>
+  
+</feed>

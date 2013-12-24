@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: APIs | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/apis/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fluent HttpClient for APIs]]></title>
+    <link href="http://www.akber.com/fluent-httpclient-for-apis"/>
+    <updated>2013-04-20T18:30:51+01:00</updated>
+    <id>http://www.akber.com/fluent-httpclient-for-apis</id>
+    <content type="html"><![CDATA[<p>The new HttpClient provides a fluent interface that is quite intuitive. However, any non-trivial implementation soon starts to miss the flexibility of configuring the connection manager. As a pre-configured HttpClient can be passed into the fluent Executor, it is not necessary to configure it each time.</p>
+
+<p>posted at <a href="http://java.dzone.com/tips/fluency-and-control-httpclient">http://java.dzone.com/tips/fluency-and-control-httpclient</a></p>
+]]></content>
+  </entry>
+  
+</feed>

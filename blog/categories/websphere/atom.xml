@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Websphere | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/websphere/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[IBM Finally Gets It With WebSphere 8.5 'Liberty']]></title>
+    <link href="http://www.akber.com/ibm-finally-gets-it-with-websphere-8-5-liberty"/>
+    <updated>2011-10-16T10:10:00+01:00</updated>
+    <id>http://www.akber.com/ibm-finally-gets-it-with-websphere-8-5-liberty</id>
+    <content type="html"><![CDATA[<p>Finally!  Some long-needed innovation in WebSphere application servers from IBM, and some fresh thinking that may boost the long-term viability of IBM leadership in middleware software.</p>
+
+<!-- more -->
+
+
+<p>Whether it is the pressure from Oracle or open-source innovation, or a long-overdue grounds-up overhaul of the WebSphere application server architecture that has been stagnant since version 5.0 &mdash; it is looking good.  A start-up time of 5 seconds, grounds-up OSGI with optional features, drop-in deployments and no installer with a zip file of under 50MB.  No installer!  At least in the alpha version that we had a chance to preview today.</p>
+
+<p>There is still a lot to be done with the version numbering.  What is this thing about releasing major technology refreshes on a minor version number?  8.0 was really 7.0+  and 6.1 was a step up from 6.0.  The desire to have a common version number across the WebSphere family really did not go anywhere.  We have Lotus Quickr 8.1 on WebSphere 6.0 and Portal 7.0 on WebSphere 6.1 and the list goes on.  Sometimes, a version refresh of WebSphere was that &mdash; a version refresh.  And don&rsquo;t get me started on the dubious software strategy of the same product on two completely different technology platforms &mdash; the infamous Quickr &mdash; the less said about the Portal version the better.</p>
+
+<p>1998-2004 was a period of great innovation in IBM software, and it has pretty much been stagnant since then. Sometimes it appears that the a flock of MBA-types swooped in and milked the software and all its permutations and all kinds of incremental functionality packaged and marketed as &lsquo;servers&rsquo;.  There was little innovation in the past five years &mdash; so little that even die-hard IBM fans were looking elsewhere to fulfil their Web 2.0 application needs.</p>
+
+<p>On another note, the HTML-only Sametime client was also a long time coming, but it is a welcome presence now that it is here.  How could IBM have missed the use cases for extranet communication and click-to-chat customer service?</p>
+
+<p>Enough criticism.  Keep up the good work, Big Blue.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IBM's Test and Dev Cloud]]></title>
+    <link href="http://www.akber.com/ibms-test-and-dev-cloud"/>
+    <updated>2010-05-20T09:33:00+01:00</updated>
+    <id>http://www.akber.com/ibms-test-and-dev-cloud</id>
+    <content type="html"><![CDATA[<p>IBM is beta-testing its own cloud at <a href="https://www-180.ibm.com/cloud/enterprise/beta/dashboard">https://www-180.ibm.com/cloud/enterprise/beta/dashboard</a>, after a successful experiment with Amazon EC2.</p>
+
+<p>As a company with hardware and operating system roots, it was smart to get on to the cloud bandwagon, which is essentially the commoditization of hardware and operating systems.</p>
+
+<p>A plain Suse instance was not a problem. However, after some initial trouble launching a WebSphere Portal/WCM instance in the wrong-sized machine, I was able to launch an instance in a &lsquo;small&rsquo; machine. I only tried it once, but a WebSphere sMash instance did not launch. My first impression is good &mdash; for a beta-testing environment, and quick proofs of concept, it is very handy.</p>
+
+<p>If you know Amazon EC2, the management console should be pretty much intuitive. The only time I had to read the good online help was when I needed to know the exact user to be used for the SSH session into an instance.</p>
+
+<p>Let us wait and see how IBM manages to position this offering once it is out of beta.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First Looks: IBM WebSphere Commerce 7.0]]></title>
+    <link href="http://www.akber.com/first-looks-ibm-websphere-commerce-7-0"/>
+    <updated>2009-11-07T16:39:00+00:00</updated>
+    <id>http://www.akber.com/first-looks-ibm-websphere-commerce-7-0</id>
+    <content type="html"><![CDATA[<p>I took IBM WebSphere Commerce 7.0 for a spin over the past couple of days.  First impressions:</p>
+
+<!-- more -->
+
+
+<ul>
+<li>generally, it had to keep up with the overall WebSphere versioning scheme, but in reality it is more like 6.5 than 7.0 (or maybe even 5.8 if one believes that 6.0 should have been 5.7).  It pulls together all the 6.0 feature packs and provides new incremental features, primarily social commerce and targeted marketing tools.</li>
+<li>technology updates, including a long-overdue database abstraction layer and running on WAS 7.0 &ndash; but still short of what is state-of-the-art in the JEE world.  The ORM layer is still too dependent on underlying primary keys system.</li>
+<li>dev environment works better, even with a publishing failure during installation, and it is more self-contained with XML and properties within the EAR</li>
+<li>although we have not done any integrations yet, my opinion is that integration with other systems and back-ends should become easier and more standards-compliant</li>
+</ul>
+
+
+<p>To be fair to IBM, they have done a good job, and not tinkered much with the market leader, but maybe they should start working on the next major release with a grounds-up re-design:</p>
+
+<ul>
+<li>with Hibernate-style ORM and inversion-of-control architecture with configuration and interface specification through annotations and much less configuration.  This will also simplify data load and reporting.</li>
+<li>a built-in portlet container (without the overhead of a full-blown Portal Server) and portlet-based tools replacing the who-knows-what-based admin, org and acc consoles, the OpenLaszlo-based Management centre and the Eclipse-based Sales Centre.  UI consolidation is way over-due.</li>
+<li>a JSR299 (web beans) based framework with annotation-based security hooks that should get rid of all that ugly Struts-database command integration.</li>
+</ul>
+
+
+<p>Well, we can dream, can&rsquo;t we?</p>
+]]></content>
+  </entry>
+  
+</feed>

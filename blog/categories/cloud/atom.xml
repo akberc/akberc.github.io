@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cloud | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/cloud/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[First Looks: IBM SmartCloud Enterprise]]></title>
+    <link href="http://www.akber.com/first-looks-ibm-smartcloud-enterprise"/>
+    <updated>2012-07-29T19:15:20+01:00</updated>
+    <id>http://www.akber.com/first-looks-ibm-smartcloud-enterprise</id>
+    <content type="html"><![CDATA[<p><a href="http://www.akber.com/assets/2012/ibm-sce.png"><img src="http://www.akber.com/assets/2012/ibm-sce.png" alt="ibm-sce" /></a></p>
+
+<p>Last year, there was an opportunity to participate in IBM&rsquo;s Cloud Beta and I <a href="http://www.akber.com/ibms-test-and-dev-cloud/">wrote about</a> some initial impressions.</p>
+
+<p>IBM have now rolled this out with geographically dispersed data centres.  Even with some terms being unique to IBM, the provisioning of instances and management of images should be familiar to those who have worked with Amazon&rsquo;s EC2 and related cloud services.</p>
+
+<p>This gives &lsquo;true Blue&rsquo; customers an option to entrust sensitive systems to a cloud provider with whom there is an existing relationship.  It will be interesting to see how this offering from IBM stacks up against managed services from IBM.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IBM's Test and Dev Cloud]]></title>
+    <link href="http://www.akber.com/ibms-test-and-dev-cloud"/>
+    <updated>2010-05-20T09:33:00+01:00</updated>
+    <id>http://www.akber.com/ibms-test-and-dev-cloud</id>
+    <content type="html"><![CDATA[<p>IBM is beta-testing its own cloud at <a href="https://www-180.ibm.com/cloud/enterprise/beta/dashboard">https://www-180.ibm.com/cloud/enterprise/beta/dashboard</a>, after a successful experiment with Amazon EC2.</p>
+
+<p>As a company with hardware and operating system roots, it was smart to get on to the cloud bandwagon, which is essentially the commoditization of hardware and operating systems.</p>
+
+<p>A plain Suse instance was not a problem. However, after some initial trouble launching a WebSphere Portal/WCM instance in the wrong-sized machine, I was able to launch an instance in a &lsquo;small&rsquo; machine. I only tried it once, but a WebSphere sMash instance did not launch. My first impression is good &mdash; for a beta-testing environment, and quick proofs of concept, it is very handy.</p>
+
+<p>If you know Amazon EC2, the management console should be pretty much intuitive. The only time I had to read the good online help was when I needed to know the exact user to be used for the SSH session into an instance.</p>
+
+<p>Let us wait and see how IBM manages to position this offering once it is out of beta.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Five Requirements of a Distrbuted Memory Caching Layer]]></title>
+    <link href="http://www.akber.com/five-requirements-a-distrbuted-memory-caching-layer"/>
+    <updated>2009-10-11T20:20:00+01:00</updated>
+    <id>http://www.akber.com/five-requirements-a-distrbuted-memory-caching-layer</id>
+    <content type="html"><![CDATA[<p>Caching provides persistent business data  and volatile session data from memory instead of from database and/or disk access.  This improves performance.  Clusters of application servers also provide performance and scalability.  The two techniques clash as one application server&rsquo;s cache is not in sync with others' caches.</p>
+
+<p>A solution for this clash is through Network-Attached Memory (NAM), which is very similar in role to a SAN (Storage Area Network) that is used for shared disk access.  External memory (spread over one or more cache servers) is made available to each application server, who think of it as their own memory.  Resources are not wasted and each application server&rsquo;s view of cached content is identical – as it is in fact the same data in memory that is visible to all.</p>
+
+<!-- more -->
+
+
+<p><strong>Read-only, Write-through and Write-behind</strong></p>
+
+<p>Just as a SAN provides continuous service even when individual disks or arrays crash, NAM should provide this shared memory even when one of the NAM servers crashes or is taken out of service.  This is distributed caching, or a data grid.  Generally, these are read-only, with write-through (writes pass through directly to disk or DB, updating the cache), and rarely, they may be write-behind: accept data commits from applications and &lsquo;write-behind&rsquo; so that the application finishes its commit or update, oblivious to whether the data may not have been written to disk or database yet, and the grid will write it out when it deems appropriate.</p>
+
+<p><strong>Short-listing Products</strong></p>
+
+<p>Common products out there are Terracotta, Gigaspaces, JBoss Infinispan and Oracle Coherence</p>
+
+<p>Working on a real-life high-performance portal, I came up with these requirements to create a short-list:</p>
+
+<ol>
+<li> Capability to cache database record objects, service invocation return objects, sessions and session objects.  Objects include object graphs.</li>
+<li> Transparent to applications, portal and any framework.  The portal platform should be able to function completely WITHOUT the distributed cache, and with little configuration changes if required.</li>
+<li> Should have no startup latency – cache warming should be accomplished using other techniques.</li>
+<li> Should be always available.  Failover of nodes providing the distributed cache, and their load-balancing, should be automatic.</li>
+<li> Should require NO code or configuration changes when new portal applications or web services are added.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

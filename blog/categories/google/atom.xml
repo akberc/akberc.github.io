@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Google | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/google/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Google Calendar Link Shows Google's Strong URL Architecture]]></title>
+    <link href="http://www.akber.com/google-calendar-link-shows-googles-strong-url-architecture"/>
+    <updated>2010-05-02T11:55:00+01:00</updated>
+    <id>http://www.akber.com/google-calendar-link-shows-googles-strong-url-architecture</id>
+    <content type="html"><![CDATA[<p>Quick Post:  Just tried this today and it worked:</p>
+
+<p>Travel and meeting sites can give you a link that can add an entry to your Google Calendar, among ICAL and other links thare are also provided.  This is very handy, as it takes care of time zones etc. and works out quite well.  The link is usually of the type:</p>
+
+<blockquote><p><a href="http://www.google.com/calendar/event?action=TEMPLATE&amp;text=.">http://www.google.com/calendar/event?action=TEMPLATE&amp;text=.</a> &hellip; .</p></blockquote>
+
+<p>If you are on your company&rsquo;s Google Apps hosted calendar, this link would not work and it would ask you to log in to a regular google account, not a Google Apps for Business calendar.  If you copy the link location and add after &lsquo;calendar/&rsquo;:</p>
+
+<blockquote><p><a href="http://www.google.com/calendar/hosted/xxxx.com/event?action=TEMPLATE&amp;text=.">http://www.google.com/calendar/hosted/xxxx.com/event?action=TEMPLATE&amp;text=.</a> &hellip; .</p></blockquote>
+
+<p>where &lsquo;xxxx.com&rsquo; is your Google Apps domain, it works like a charm. Kudos to Google URL architecture and those that enforce it.</p>
+]]></content>
+  </entry>
+  
+</feed>

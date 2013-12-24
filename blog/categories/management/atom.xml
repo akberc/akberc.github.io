@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Management | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/management/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Program Management]]></title>
+    <link href="http://www.akber.com/program-management"/>
+    <updated>2012-03-25T14:11:36+01:00</updated>
+    <id>http://www.akber.com/program-management</id>
+    <content type="html"><![CDATA[<p>Program Management, a discipline that has been around for a long time (as in &lsquo;social programs&rsquo;), is gaining wider acceptance as IT projects become more complex, inter-related and closer to the actual business processes that they help to run. In other words, projects may fail to deliver their benefit due to no intrinsic failure of the project itself. The project delivers a product, whereas the program delivers the benefit.</p>
+
+<!-- more -->
+
+
+<h2>Introduction</h2>
+
+<p>Program Management is the art of providing a total benefit out of related projects &mdash; at a certain cost and at a specified risk tolerance.</p>
+
+<p>Let us look at an example, the repaving of a road for two kilometres is a discrete project that can be executed by a contractor in return for a certain payment.  However, the funds and schedule for that project may have come from a &lsquo;City Infrastructure Improvement Program&rsquo;.  Ten individual road may have been fixed, but did the infrastructure of the city actually improve?  Was the benefit of &lsquo;infrastructure improvement&rsquo; actually realized? How can it be measured?</p>
+
+<h3>Why Programs?</h3>
+
+<p>Here, we can make a rebuttable assumption that programs are initiated due to one of these three reasons: a vision, a business need, or regulatory compliance.  A vision can be justified as a business case, but it remains a vision due its specificity.  A town aiming to become the &lsquo;tourist capital&rsquo; of a state is a vision &ndash; it could have just as easily made a business case for becoming a &lsquo;festival capital&rsquo; or an &lsquo;education capital&rsquo;.  A question I am fond of presenting is: why should we build Ugly Bridge over Muddy River? The King thinks another bridge will look pretty, or the capacity of the current bridge has already been exceeded, or the public safety authority is about to condemn it because it is not safe.  Each of these reasons belongs to each of the categories: vision, need, or regulation.</p>
+
+<h3>Isn&rsquo;t this just Business as Usual?</h3>
+
+<p>Well, if program management is sounding almost like running a business, it may well be.  Let me present another hypothesis: every transition in the state of a business is a program.  A static business that is not growing or shrinking, and where every day is BAU (business as usual), is not in need of a program. As soon as it embarks on growing its customer base (going international) or shrinking (downsizing), a bunch of inter-related projects appear out of nowhere.  What about translation, re-training, customer service levels, IT systems etc.  Now, all of these projects may be individually successful, but the benefit of international expansion or downsizing may never be realized.  This is where Program Management comes in.</p>
+
+<p>So, Program Management is part of Business Transition Management or Change Management.</p>
+
+<p>Quite a few companies have adopted Program Management across their organizations.  A recently launched bank (that used to be my client) have based their entire organizational structure under the umbrella of the Program Management Office. The structured and rigorous methodologies of Program Management drove their launch, their expansion, and the transition of their core processes to different types of financial service offerings.</p>
+
+<h2>Methodologies</h2>
+
+<p>There are two main methodologies that are widely followed:
+1. <a href="http://www.pmi.org/CareerDevelopment/Pages/Our-Credentials.aspx#pgmp">PMI PgMP Credential Exam Methodology</a> builds on PMI&rsquo;s PMBOK-based methodology of phases, planning and control, and naturally lends itself more to quantifiable change management (need and regulation drivers).
+2. <a href="href='http://www.best-management-practice.com/Knowledge-Centre/Best-Practice-Guidance/Managing-Successful-Programmes/">OGC Managing Successful Programmes</a> builds on the PRINCE2 document-centric methodology of management by exception.  Its planning approach is iterative and more conducive to programs where the start is just a one-sentence mission statement (vision driver).</p>
+
+<p>The following roles and responsibilities are common to both, and to others as well:
+* Sponsor &ndash; to put it blungly, the person who may lose their job if the benefit is not realized
+* Advisory Board &ndash; members with insight into various business areas affected
+* Program Manager &ndash; the executor of the program with an eye on projects and benefits
+* Change Co-ordinator &ndash; facilitates the adoption of the changed products and processes</p>
+
+<h2>Program Management in IT</h2>
+
+<p>While Program Management is a generic discipline, its recent emergence has fulfilled a growing need.  Around the turn of the century, projects building or improving modern complex and distributed computer systems were experiencing a <a href="http://www.spectrum.ieee.org/sep05/1685">very high rate of failure</a>. The situation has <a href="http://www.softwaremag.com/L.cfm?doc=newsletter/2004-01-15/Standish">improved somewhat</a> in the last few years, primarily due to a focus on infrastructure and software architecture, solid program and project management, Internet-enabled information sharing, the open-source movement, and iterative software development methodologies.  Program Management for software systems is particularly useful over multiple systems, disparate geographies and disjointed business units.</p>
+
+<p>With distributed systems, especially those based on, or transitioning to,  SOA (Service-Oriented Architecture), it is now possible for business process applications to be the composition and orchestration of discrete services, put together by relatively non-technical people.  This business agility and flexibility comes at the cost of inter-dependent services and systems that form a grid-like virtual business world that is perhaps equal in nuance to the real business processes that it drives.  The responsiveness of systems to business change goes the other way too:  the business is now ulta-sensitive to change in systems. Implementing and changing such systems cannot be big-bang, and cannot be simple projects, <a href="http://www.soamag.com/I17/0408-3.asp">they need to be programs</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ITIL, PRINCE2 and Agile]]></title>
+    <link href="http://www.akber.com/itil-prince2-and-agile"/>
+    <updated>2011-04-11T00:10:00+01:00</updated>
+    <id>http://www.akber.com/itil-prince2-and-agile</id>
+    <content type="html"><![CDATA[<p>Enterprise systems required service management to ensure that newly deployed projects run in a predictable and manageable manner.  The discipline and project managment that enabled project delivery should continue in some form.  The project has now become a service and service management picks up from project management, preferably with due protocol and acceptance.  </p>
+
+<p><a href="http://www.itil-officialsite.com/">ITIL</a> is a widely used standard for service management.  Large organisations that use ITIL typically would use PRINCE2 as the project management methodology to enable project delivery within known budgets and timelines.  Agile development methods are proving to be better at providing quality, meritocracy and skill rentention in software development.</p>
+
+<p>At one client, we had the challenge of explaining how these will all work together.  Here is the sketch I used (with permission):</p>
+
+<!-- more -->
+
+
+<p><img src="http://www.akber.com/assets/2011/itil-p2-scrum.jpg" alt="" /></p>
+
+<ul>
+<li>Agile development techniques are used to build and deliver components that correspond to a PRINCE2 work package. These are termed &lsquo;Dev&rsquo; scrums.</li>
+<li>Agile &lsquo;sprints&rsquo; or &lsquo;scrums&rsquo; are also used to build configurations (environments, scripts, tests) etc. that are required for ITIL service transition and acceptance. These are termed &lsquo;IT&rsquo; sprints.</li>
+<li>A PRINCE2 stage lifecycle should align with the service delivery cycle.</li>
+</ul>
+
+
+<p>This approach helped us to find issues earlier and align delivery of developed components and infrastructure as a coherent service that could then be taken over by service management.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cloud Controls OS Configuration Chaos]]></title>
+    <link href="http://www.akber.com/cloud-controls-os-configuration-chaos"/>
+    <updated>2009-09-23T00:10:00+01:00</updated>
+    <id>http://www.akber.com/cloud-controls-os-configuration-chaos</id>
+    <content type="html"><![CDATA[<p>Just as hardware became irrelevant a few years ago, we are about to make the operating system irrelevant with cloud computing.  </p>
+
+<p>Servers were commoditized and put in farms, and their resources used and re-used with virtual machines.  Ubiquitous open source software and maturing web services were the final pieces of the puzzle, and clouds now allow us to design and deploy an application whose components may run on different machines, all connected by a single thread: the IP address!</p>
+
+<p>The application is king!  The server hardware, virtualization technology and operating system have just become wrappers around the application.  The application consumes their resources and provides services.</p>
+
+<p>So, where does configuration fit in?  Configuration was required to upgrade and optimise applications, improve their security or performance, or to make multiple instances or components live side by side without stepping on each others' toes. And yes, working with data structure migration, data retrieval and backup, which are not yet as commoditized but we are well on the way there.</p>
+
+<!-- more -->
+
+
+<p>How have the industry giants played this:  IBM has hooked up with Amazon EC2 while it works out its Cloudburst approach, Oracle bought Sun, and Microsoft saw an opportunity to enclose its proprietary operating system within a VM.  People saw pigs fly as Microsoft contributed GPL code to the Linux kernel, providing hooks for its virtualization technology.  So you see where I am going with this &ndash; it will not matter which OS is running the application, as long as the produced services are usable.  Operating systems will live or die based on the amount of stability they can provide to the application stack.  So:  IBM saw the opportunity to take the game to a higher level.  Oracle found a thought leader whose HW/OS will form a wrapper around Oracle&rsquo;s app-enabling technology, and they have just announced the Sun Cloud.  Microsoft sees it as an opportunity for people to not see the proprietary nature of the OS that runs apps built on proprietary MS technologies such as .NET, making them portable for all intents and purposes.</p>
+
+<p>Expect to see a upcoming improvement in VM packaging technology, JVM embedded more into specific operating systems, and data semantic tools.  Upgrading an app would then just be building a new optimized VM image around the new app, and throwing the image it into the cloud, asking it to connect to existing data and upgrade the data structures as it sees fit.</p>
+
+<p>Your friendly system administrator may not even know which operating system ends up executing the machine instructions on the CPU.  No twiddling, no configuration, nothing.</p>
+]]></content>
+  </entry>
+  
+</feed>

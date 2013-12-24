@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ecommerce | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/ecommerce/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linking Dialog and Web Activities in WebSphere Commerce Marketing]]></title>
+    <link href="http://www.akber.com/linking-dialog-and-web-activities-in-websphere-commerce-marketing"/>
+    <updated>2010-10-15T00:10:00+01:00</updated>
+    <id>http://www.akber.com/linking-dialog-and-web-activities-in-websphere-commerce-marketing</id>
+    <content type="html"><![CDATA[<p>IBM WebSphere Commerce 7.0 comes with a substantial set of marketing activities, namely web activities, e-mail activities and dialog activities.  These are all part of a feature known as &lsquo;Precision Marketing&rsquo; which works roughly as follows:</p>
+
+<p>An active customer action or a background processing action causes a &lsquo;trigger&rsquo; to fire.  If this triggering can be scoped to a &lsquo;target&rsquo; (qualification), then an &lsquo;action&rsquo; occurs. </p>
+
+<p>Activity types: Web and e-mail activities push content along, while dialog activities respond to specific shopper request behaviour.</p>
+
+<p><strong>Poor Man&rsquo;s Recommendation Engine:</strong> Now, a recommendation engine pushes content and products based on past shopper behaviour, whether specific to that shopper, or general past shopper behaviour.</p>
+
+<p>If a dialog activity&rsquo;s end action is to persist captured user behaviour, then triggers and targets based on the persisted behaviour can then be used in a web activity to display specific content.</p>
+
+<p>Thus, combining the two with some custom enhancements that put together some logic and data storage and you may have a specialised recommendation engine for your specific business needs.</p>
+]]></content>
+  </entry>
+  
+</feed>

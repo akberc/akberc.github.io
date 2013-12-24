@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming | Akber Choudhry]]></title>
+  <link href="http://www.akber.com/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://www.akber.com/"/>
+  <updated>2013-12-24T02:48:28+00:00</updated>
+  <id>http://www.akber.com/</id>
+  <author>
+    <name><![CDATA[Akber Choudhry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[First Published Shareware (1989)]]></title>
+    <link href="http://www.akber.com/shareware-typetime-1989"/>
+    <updated>1989-10-09T14:10:00+01:00</updated>
+    <id>http://www.akber.com/shareware-typetime-1989</id>
+    <content type="html"><![CDATA[<p>OK, let us go back in time.  Before the commercial Internet, I saved some money and bought Turbo Pascal from a store on King&rsquo;s Highway, Brooklyn, New York.</p>
+
+<p>I was learning to touch type in those days, so I wrote a program to help me to touch type.  With some polish, I compiled and put it on a floppy and shipped it to a shareware publisher who used to send out shareware floppy disks every month.</p>
+
+<p>Software and review/intro attached.  Here is the opening screen:
+<img src="http://www.akber.com/assets/1989/type-time.jpg" alt="" /></p>
+
+<p><a href="http://www.akber.com/assets/1989/TYPE_TUT.TXT">The entry: </a></p>
+
+<p><a href="http://www.akber.com/assets/1989/TYPETIM.ZIP">And it still runs: </a></p>
+]]></content>
+  </entry>
+  
+</feed>
