@@ -1,0 +1,192 @@
+ATTACK22.ZIP   106625  01-26-95  Letter Attack 2.2 is an arcade-style typing
+                               | tutor. Words and letters flash across the     
+                               | screen and must be typed correctly before     
+                               | they reach the bottom of the screen. A        
+                               | practice section is included to show correct  
+                               | finger placement. (Eldon Martin) (Reg.Fee: $6)
+DATAPRO4.ZIP   141891  04-13-94  DataPro 4.0 hones your typing skills for data
+                               | processing types of applications. For         
+                               | example, it times your entering of data into  
+                               | a payroll type of application, automatically  
+                               | advancing to each field, just as a program    
+                               | would do. It also drills you on use of the    
+                               | number pad for numeric input. This is an      
+                               | excellent way to practice your data entry     
+                               | skills or, if you are an employer, to test    
+                               | applicants. Also included are a warm-up       
+                               | program and a typing skill game. (Fred        
+                               | Howard) (Reg.Fee: $22)                        
+FASTMONO.ZIP   285457  04-04-94  PC-FasType/Mono 1.4 is a typing tutor program
+                               | specifically designed for laptops, portables, 
+                               | and systems with monochrome monitors. Network 
+                               | support is provided, and an all-caps mode is  
+                               | available for small children. Timed exercises 
+                               | of up to 20 minutes can be run. (William J    
+                               | Letendre) (ASP) (Reg.Fee: $28)                
+FASTYPE.ZIP    291535  04-04-94  PC Fastype/CGA 4.4 is a typing drill program
+                               | for beginning, intermediate and advanced      
+                               | typists. It uses a graphics screen to display 
+                               | a picture of a keyboard on the bottom half of 
+                               | the screen. The key you should be hitting is  
+                               | highlighted on the keyboard while the word or 
+                               | sentence is displayed on the top half of the  
+                               | screen. This is very handy for beginners who  
+                               | might have trouble locating keys. (William J  
+                               | Letendre) (ASP) (Reg.Fee: $28)                
+FASTYPEV.ZIP   297521  04-15-94  PC Fastype/VGA 1.1 is an outstanding typing
+                               | drill program for all levels of skill. The    
+                               | program displays a 3-D image of the keyboard  
+                               | and if you have trouble finding a letter, the 
+                               | key will go up and down on the keyboard after 
+                               | a reasonable amount of time. Our only         
+                               | complaint is that if you are typing quickly   
+                               | and miss a letter completely, instead of      
+                               | counting it as one error, all letters that    
+                               | you type after that letter are counted as     
+                               | errors until you get back in sync again.      
+                               | Otherwise, this is an excellent program which 
+                               | we can highly recommend. Requires VGA, DOS    
+                               | 3.3+, 512K RAM and a hard disk with at 800K   
+                               | of space. (William J Letendre) (ASP)          
+                               | (Reg.Fee: $28)                                
+FINGERS.ZIP      3177  04-29-23  Fingers  lets you practice typing. (Robert
+                               | Bedford) (Reg.Fee: $5)                        
+KEYPAD.ZIP      16861  08-23-93  Keypad  drills you on touch typing on the
+                               | numeric keypad. (Nathan Alan King) (Reg.Fee:  
+                               | $8)                                           
+LRN2TYPE.ZIP    74918  04-13-94  Lrn2Type and Read-In  are typing training
+                               | programs for the beginning and intermediate   
+                               | touch typist. Lrn2Type helps the beginning    
+                               | typist learn character locations. Read-In is  
+                               | for the typist who already has some touch     
+                               | typing experience. (Clement S. Pepper)        
+                               | (Reg.Fee: $15)                                
+NUMPAD.ZIP     102561  04-13-94  NumPad 1.2 allows you to practice using the
+                               | numeric keypad. It contains an on-screen      
+                               | numeric keypad, a set of random numbers to    
+                               | type, and a game in which you must type       
+                               | falling numbers before they strike buildings  
+                               | and destroy them. (Fred Howard) (Reg.Fee: $10)
+PC_TOUCH.ZIP    65518  04-04-94  PC-Touch  is a touch typing practice program.
+                               | Also included is LETTERFALL which is a typing 
+                               | tutor program. (Reg.Fee: $?)                  
+PCKEY.ZIP       79419  05-23-94  PcKey 1.01 is a typing tutor with text or
+                               | script files that are read from disk and      
+                               | executed like a program. You can create your  
+                               | own files and set your own level of           
+                               | difficulty.   (Andrew Sprott) (Reg.Fee: $15   
+                               | pound)                                        
+QUICTYP.ZIP     51893  06-04-90  Quictype 2.01 is for polishing your touch
+                               | typing skills. The graphical interface, in    
+                               | which you must type a sentence as it moves    
+                               | down the screen, and before it reaches the    
+                               | bottom, adds a nice flair to the program.     
+                               | Features include a warm-up screen with        
+                               | graphical keyboard display and a separate "no 
+                               | pressure" practice display with on-screen     
+                               | keyboard. You can select different practice   
+                               | files from the game play menu. There are      
+                               | practice files, with tutorial information on  
+                               | typing technique. On completion of a practice 
+                               | session, it reports your typing speed and     
+                               | which letters you missed the most. You can    
+                               | input your own text files for typing practice 
+                               | or use what comes with the program. (Matthew  
+                               | Ratcliff) (Reg.Fee: $5)                       
+SKLTRONC.ZIP   114589  02-23-95  Skill-Tronics  contains three keyboard skill
+                               | building games. They were designed for        
+                               | beginning-level computer students who have    
+                               | little previous experience with a computer or 
+                               | even a typewriter keyboard. (Stephen C.       
+                               | Grubb) (Reg.Fee: $0)                          
+TENKEYER.ZIP   183755  03-28-92  Tenkeyer  trains and drills you on using the
+                               | numeric keypad, as well as the top row of     
+                               | numbers on the keyboard. This skill is useful 
+                               | in data entry, accounting, using cash         
+                               | registers, etc. (Ersoft, Inc.) (Reg.Fee:      
+                               | $20-50)                                       
+TENTUTR.ZIP     30808  07-04-91  Tenkey Tutor  is an excellent excercise to
+                               | increase your proficiency in 10-key data      
+                               | entry. There is a basic drill and a sample    
+                               | data entry screen for which your entry speed  
+                               | can be rated. (The authors are no longer at   
+                               | the address listed in the documentation.)     
+                               | (Reg.Fee: $6)                                 
+TME.ZIP         64222  03-13-95  Typing Made Easy 1.0 is a complete touch
+                               | typing tutor. It can analyze a users skills   
+                               | and create tailored typing drills             
+                               | accordingly. The program teaches the          
+                               | keyboard, provides drills and maintains       
+                               | statistics and progress reports. It uses      
+                               | graphics to introduce and reinforce finger    
+                               | positioning, exercises and drills including   
+                               | full paragraph formats, a typing game to      
+                               | provide a break from drills, and an           
+                               | administrative module for using the course in 
+                               | the classroom. (QED Information Sciences,     
+                               | Inc.) (Reg.Fee: $25)                          
+TTT.ZIP         50639  04-04-94  Touch Typing Tutor  offers three different
+                               | modes of operation. The Teach Mode has eight  
+                               | graduated lessons and adapts itself           
+                               | automatically to the user's skill level.      
+                               | Speed Mode is designed for professional       
+                               | typists and secretarial agencies to measure a 
+                               | typist's speed. Game Mode was added because   
+                               | all the commercial typing tutors seem to have 
+                               | one. Five skill levels. The game also adapts  
+                               | itself to the typist's skill, forcing the     
+                               | user to type faster and faster. Other         
+                               | features include a mouse interface, tutorial  
+                               | statistics, lesson threshold speed and the    
+                               | ability to record mistakes in tutorial and    
+                               | speed tests. (David P. Gray) (ASP) (Reg.Fee:  
+                               | $20)                                          
+TYPECLAS.ZIP   105312  04-08-94  Typing Test/Classroom  allows you to set up a
+                               | variety of typing drills and tests based on a 
+                               | preset time interval or the length of the     
+                               | typed document. (Viktor Khalfon's             
+                               | Instructional) (Reg.Fee: $12)                 
+TYPEEN54.ZIP    86850  01-19-95  Typemate 5.40 is a typing tutor for the
+                               | English, French and Dutch languages. It       
+                               | teaches finger positions, words, sentences,   
+                               | capitals, numbers and six lessons in which    
+                               | the number of keys for touch typing is        
+                               | gradually increased. (Martijn Y. De Deugd)    
+                               | (Reg.Fee: $25)                                
+TYPEGAME.ZIP   145294  10-25-93  Type Games 3.0 is an Olympic typing practice
+                               | game. A phrase is displayed on the screen,    
+                               | then you must type the phrase in an allotted  
+                               | amount of time, or your opponent wins the     
+                               | point. There are three levels of phrase       
+                               | difficulty, and 100 selectable speeds. The    
+                               | Olympic theme to this game is fun, including  
+                               | the playing of the winning country's national 
+                               | anthem. You can add your own phrases. (Alan   
+                               | C. Elliott) (ASP) (Reg.Fee: $19)              
+TYPETIM.ZIP     11465  06-22-89  TypeTim  has two parts: a test of typing
+                               | speed and a practice drill. We found the      
+                               | program to be simple, but effective. (Akber   
+                               | A. Choudhry) (Reg.Fee: $10)                   
+TYPETMR.ZIP     22389  02-26-92  TypeTimer 1.0b is a 25K TSR that turns your
+                               | text based word processor or editor into a    
+                               | typing test. It counts keystrokes for a       
+                               | specified period of time and reports          
+                               | statistics. This program does NOT support a   
+                               | graphics oriented or Windows editor. (KIS     
+                               | Systems) (Reg.Fee: $10-$23)                   
+TYPETREK.ZIP   368754  08-09-94  Type Trek 2.0 is a typing tutor in a
+                               | space-trek game format. It introduces the     
+                               | keys on the keyboard, starting with the home  
+                               | row keys, and adding more keys until the      
+                               | keyboard is mastered. Controlled drills are   
+                               | provided by typing words that fire phasers    
+                               | and photon torpedoes, move the Enterprise,    
+                               | dock and refuel, and more. Words-per-minute   
+                               | estimates are displayed as you progress       
+                               | through each game.    NEW: There are three    
+                               | races of aliens with whom players can         
+                               | converse. Players can access the ship's       
+                               | computer, go down into the ships interior for 
+                               | repairs and scroll the spacescape through the 
+                               | ship's view-port. (Joe Kretschmer) (ASP)      
+                               | (Reg.Fee: $20)                                
